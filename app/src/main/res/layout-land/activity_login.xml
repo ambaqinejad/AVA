@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/sign_up_back"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/land_scape_background" />
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="خوش آمدید"
+        android:textColor="#8b1716"
+        android:textSize="40sp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/welcome"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/land_back_login">
+
+        <LinearLayout
+            android:id="@+id/login_widget_linear_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/login_stno"
+                android:layout_width="717px"
+                android:layout_height="135px"
+                android:layout_margin="15dp"
+                android:background="@drawable/edit_text_container"
+                android:gravity="center_vertical|start"
+                android:hint="@string/stno"
+                android:inputType="number"
+                android:paddingEnd="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingStart="20dp" />
+
+            <EditText
+                android:id="@+id/login_national_id"
+                android:layout_width="717px"
+                android:layout_height="135px"
+                android:layout_margin="15dp"
+                android:background="@drawable/edit_text_container"
+                android:gravity="center_vertical|start"
+                android:hint="@string/national_id"
+                android:inputType="numberPassword"
+                android:paddingEnd="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingStart="20dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/login_button_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/login_widget_linear_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/login_register_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/login_btn"
+                android:onClick="loginBtnClick"
+                android:text="@string/register"
+                android:textColor="#b7d607"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/login_enter_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/login_btn"
+                android:onClick="loginBtnClick"
+                android:text="@string/enter"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

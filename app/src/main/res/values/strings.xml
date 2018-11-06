@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">AVA</string>
+    <string name="name">نام</string>
+    <string name="family">نام خانوادگی</string>
+    <string name="stno">شماره دانشجویی</string>
+    <string name="national_id">کد ملی</string>
+    <string name="major">رشته تحصیلی</string>
+    <string name="entry_year">سال ورود</string>
+    <string name="average">معدل کل</string>
+    <string name="register">ثبت نام</string>
+    <string name="enter">ورود</string>
+    <string name="stno_sign_up">شماره دانشجویی * </string>
+    <string name="national_id_sign_up">کد ملی *</string>
+    <string name="entry_year_sign_up">سال ورود *</string>
+    <string name="average_sign_up">معدل کل *</string>
+</resources>
