@@ -17,15 +17,16 @@
     <TextView
         android:text="خوش آمدید"
         android:textColor="#8b1716"
-        android:textSize="40sp"
+        android:textSize="@dimen/welcome_message_size"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="60dp"
         android:id="@+id/welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <RelativeLayout
         android:layout_below="@id/welcome"
         android:layout_width="wrap_content"
+        android:padding="40dp"
         android:layout_centerHorizontal="true"
         android:background="@drawable/login_widget_layout"
         android:layout_marginTop="10dp"
@@ -35,38 +36,44 @@
             android:id="@+id/login_widget_linear_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-             android:orientation="vertical">
+            android:layout_marginTop="50dp"
+            android:orientation="vertical">
+
             <EditText
                 android:id="@+id/login_stno"
-                android:layout_width="717px"
-                android:layout_height="135px"
+                android:layout_width="700px"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/edit_text_container"
                 android:gravity="center_vertical|start"
                 android:hint="@string/stno"
                 android:inputType="number"
+                android:paddingBottom="10dp"
                 android:paddingEnd="20dp"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
-                android:paddingStart="20dp" />
+                android:paddingStart="20dp"
+                android:paddingTop="10dp" />
 
             <EditText
                 android:id="@+id/login_national_id"
-                android:layout_width="717px"
-                android:layout_height="135px"
+                android:layout_width="700px"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/edit_text_container"
                 android:gravity="center_vertical|start"
                 android:hint="@string/national_id"
                 android:inputType="numberPassword"
+                android:paddingBottom="10dp"
                 android:paddingEnd="20dp"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
-                android:paddingStart="20dp" />
+                android:paddingStart="20dp"
+                android:paddingTop="10dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -74,18 +81,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/login_widget_linear_layout"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="80dp">
-            <Button
-                android:id="@+id/login_register_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/login_btn"
-                android:text="@string/register"
-                android:textSize="20sp"
-                android:layout_margin="10dp"
-                android:textColor="#b7d607"/>
+            android:layout_marginTop="30dp">
             <Button
                 android:id="@+id/login_enter_btn"
                 android:layout_width="wrap_content"
@@ -94,7 +92,26 @@
                 android:text="@string/enter"
                 android:textSize="20sp"
                 android:layout_margin="10dp"
+                android:onClick="loginBtnClick"
                 android:textColor="@color/white"/>
+            <TextView
+                android:id="@+id/login_register_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/register"
+                android:textSize="20sp"
+                android:textStyle="italic"
+
+                android:layout_margin="10dp"
+                android:onClick="loginBtnClick"
+                android:textColor="#9a0000"/>
         </LinearLayout>
     </RelativeLayout>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progress_bar_login"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"/>
 </RelativeLayout>

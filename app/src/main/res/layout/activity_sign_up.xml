@@ -15,136 +15,206 @@
 
     <ScrollView
         android:id="@+id/scrollView"
-        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true">
-        <LinearLayout
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp">
+
+        <RelativeLayout
             android:id="@+id/sign_up_widget_linear_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|top"
             android:background="@drawable/widget_layout"
             android:orientation="vertical">
+
             <TextView
                 android:layout_width="wrap_content"
+                android:id="@+id/necessaryMessage"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                android:textColor="#8b1716"
+                android:layout_alignParentTop="true"
                 android:layout_marginTop="10dp"
-                android:text="فیلد های ستاره دار اجباری می باشند."/>
+                android:text="فیلد های ستاره دار اجباری می باشند."
+                android:textColor="#8b1716"
+                android:textSize="12sp"
+                android:layout_centerHorizontal="true"
+                android:textStyle="bold" />
+
             <EditText
                 android:id="@+id/sign_up_name"
-                android:layout_width="717px"
-                android:layout_height="135px"
-                android:layout_gravity="center_horizontal"
+                android:layout_below="@id/necessaryMessage"
+                android:layout_width="700px"
+                android:layout_centerHorizontal="true"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/edit_text_container"
-                android:gravity="center_vertical|start"
                 android:hint="@string/name"
                 android:inputType="text"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
                 android:paddingEnd="20dp"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:paddingStart="20dp" />
+
             <EditText
                 android:id="@+id/sign_up_family"
-                android:layout_width="717px"
-                android:layout_height="135px"
-                android:layout_gravity="center_horizontal"
+                android:layout_width="700px"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sign_up_name"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/edit_text_container"
-                android:gravity="center_vertical|start"
                 android:hint="@string/family"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
                 android:inputType="text"
                 android:paddingEnd="20dp"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:paddingStart="20dp" />
-            <EditText
-                android:id="@+id/sign_up_stno"
-                android:layout_width="717px"
-                android:layout_height="135px"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/edit_text_container"
-                android:gravity="center_vertical|start"
-                android:hint="@string/stno_sign_up"
-                android:inputType="number"
-                android:paddingEnd="20dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:paddingStart="20dp" />
+                <EditText
+                    android:id="@+id/sign_up_stno"
+                    android:layout_width="700px"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sign_up_family"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/edit_text_container"
+                    android:hint="@string/stno_sign_up"
+                    android:inputType="number"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:layout_marginTop="15dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingStart="20dp" />
+
+
             <EditText
                 android:id="@+id/sign_up_national_id"
-                android:layout_width="717px"
-                android:layout_height="135px"
-                android:layout_gravity="center_horizontal"
+                android:layout_width="700px"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sign_up_stno"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/edit_text_container"
-                android:gravity="center_vertical|start"
                 android:hint="@string/national_id_sign_up"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
                 android:inputType="numberPassword"
                 android:paddingEnd="20dp"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:paddingStart="20dp" />
+
             <EditText
                 android:id="@+id/sign_up_major"
-                android:layout_width="717px"
-                android:layout_height="135px"
-                android:layout_gravity="center_horizontal"
+                android:layout_width="700px"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sign_up_national_id"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/edit_text_container"
-                android:gravity="center_vertical|start"
                 android:hint="@string/major"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
                 android:inputType="text"
                 android:paddingEnd="20dp"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:paddingStart="20dp" />
+
             <EditText
                 android:id="@+id/sign_up_entry_year"
-                android:layout_width="717px"
-                android:layout_height="135px"
-                android:layout_gravity="center_horizontal"
+                android:layout_width="700px"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sign_up_major"
+                android:layout_centerHorizontal="true"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/edit_text_container"
-                android:gravity="center_vertical|start"
                 android:hint="@string/entry_year_sign_up"
                 android:inputType="number"
                 android:paddingEnd="20dp"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:paddingStart="20dp" />
+
             <EditText
                 android:id="@+id/sign_up_average"
-                android:layout_width="717px"
-                android:layout_height="135px"
-                android:layout_gravity="center_horizontal"
+                android:layout_width="700px"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sign_up_entry_year"
+                android:layout_centerHorizontal="true"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/edit_text_container"
-                android:gravity="center_vertical|start"
                 android:hint="@string/average_sign_up"
                 android:inputType="text"
                 android:paddingEnd="20dp"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:paddingStart="20dp" />
+
             <Button
                 android:id="@+id/register_sign_up"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/register_btn"
-                android:layout_marginTop="15dp"
+                android:layout_below="@id/sign_up_average"
+                android:layout_centerHorizontal="true"
                 android:layout_marginBottom="15dp"
-                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/register_btn"
+                android:onClick="signUpBtnClick"
                 android:text="@string/register"
-                android:textSize="20sp"
                 android:textColor="@color/white"
-                />
-        </LinearLayout>
+                android:textSize="20sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*"
+                android:textSize="20sp"
+                android:layout_toEndOf="@id/sign_up_stno"
+                android:layout_toRightOf="@id/sign_up_stno"
+                android:layout_alignBaseline="@id/sign_up_stno"
+                android:textColor="#ef0a0a"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*"
+                android:textSize="20sp"
+                android:layout_toEndOf="@id/sign_up_national_id"
+                android:layout_toRightOf="@id/sign_up_national_id"
+                android:layout_alignBaseline="@id/sign_up_national_id"
+                android:textColor="#ef0a0a"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*"
+                android:textSize="20sp"
+                android:layout_toEndOf="@id/sign_up_entry_year"
+                android:layout_toRightOf="@id/sign_up_entry_year"
+                android:layout_alignBaseline="@id/sign_up_entry_year"
+                android:textColor="#ef0a0a"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*"
+                android:textSize="20sp"
+                android:layout_toEndOf="@id/sign_up_average"
+                android:layout_toRightOf="@id/sign_up_average"
+                android:layout_alignBaseline="@id/sign_up_average"
+                android:textColor="#ef0a0a"/>
+        </RelativeLayout>
     </ScrollView>
+
+
+    <ProgressBar
+        android:id="@+id/progress_bar_sign_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible" />
 </RelativeLayout>

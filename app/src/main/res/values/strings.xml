@@ -7,10 +7,10 @@
     <string name="major">رشته تحصیلی</string>
     <string name="entry_year">سال ورود</string>
     <string name="average">معدل کل</string>
-    <string name="register">ثبت نام</string>
+    <string name="register"><u>ثبت نام</u></string>
     <string name="enter">ورود</string>
-    <string name="stno_sign_up">شماره دانشجویی * </string>
-    <string name="national_id_sign_up">کد ملی *</string>
-    <string name="entry_year_sign_up">سال ورود *</string>
-    <string name="average_sign_up">معدل کل *</string>
+    <string name="stno_sign_up">شماره دانشجویی</string>
+    <string name="national_id_sign_up">کد ملی</string>
+    <string name="entry_year_sign_up">سال ورود به عنوان مثال ۱۳۹۷</string>
+    <string name="average_sign_up">معدل کل</string>
 </resources>
