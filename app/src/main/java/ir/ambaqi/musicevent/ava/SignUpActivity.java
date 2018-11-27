@@ -42,29 +42,59 @@ public class SignUpActivity extends AppCompatActivity implements ComponentMethod
 
     @Override
     public void init() {
-        Typeface typeface = Typeface.createFromAsset(getAssets(), "Fonts/Far_Naskh.ttf");
         nameSignUp = findViewById(R.id.sign_up_name);
-        nameSignUp.setTypeface(typeface);
         familySignUp = findViewById(R.id.sign_up_family);
-        familySignUp.setTypeface(typeface);
         stnoSignUp = findViewById(R.id.sign_up_stno);
-        stnoSignUp.setTypeface(typeface);
         nationalIdSignUp = findViewById(R.id.sign_up_national_id);
-        nationalIdSignUp.setTypeface(typeface);
         necessaryMessageText = findViewById(R.id.necessaryMessage);
-        necessaryMessageText.setTypeface(typeface);
         majorSignUp = findViewById(R.id.sign_up_major);
-        majorSignUp.setTypeface(typeface);
         entryYearSignUp = findViewById(R.id.sign_up_entry_year);
-        entryYearSignUp.setTypeface(typeface);
         averageSignUp = findViewById(R.id.sign_up_average);
-        averageSignUp.setTypeface(typeface);
         registerSignUp = findViewById(R.id.register_sign_up);
-        registerSignUp.setTypeface(typeface);
         signUpProgressBar = findViewById(R.id.progress_bar_sign_up);
         signUpQueue = Volley.newRequestQueue(SignUpActivity.this);
     }
 
+    @Override
+    public void setTypeFaceToComponent() {
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "Fonts/Far_Naskh.ttf");
+        nameSignUp.setTypeface(typeface);
+        familySignUp.setTypeface(typeface);
+        stnoSignUp.setTypeface(typeface);
+        nationalIdSignUp.setTypeface(typeface);
+        necessaryMessageText.setTypeface(typeface);
+        majorSignUp.setTypeface(typeface);
+        entryYearSignUp.setTypeface(typeface);
+        averageSignUp.setTypeface(typeface);
+        registerSignUp.setTypeface(typeface);
+    }
+
+
+    public void signUpBtnClick(View view) {
+        if (stnoSignUp.getText().toString().equals("") || nationalIdSignUp.getText().toString().equals("")
+                || entryYearSignUp.getText().toString().equals("") || averageSignUp.getText().toString().equals("")) {
+            Toast.makeText(SignUpActivity.this, "لطفا موارد ستاره دار را وارد نمایید.",
+                    Toast.LENGTH_LONG).show();
+        } else {
+            try {
+                if (checkAvg()) {
+                    Toast.makeText(SignUpActivity.this, "معدل وارد شده نادرست است.",
+                            Toast.LENGTH_LONG).show();
+                } else {
+                    if (checkEntryYear()) {
+                        Toast.makeText(SignUpActivity.this, "سال ورود نادرست است.",
+                                Toast.LENGTH_LONG).show();
+                    } else {
+                        changeVisibility(false);
+                        sendSignUpDataToServer();
+                    }
+                }
+            } catch (Exception ex) {
+                Toast.makeText(SignUpActivity.this, "معدل وارد شده نادرست است.",
+                        Toast.LENGTH_LONG).show();
+            }
+        }
+    }
 
     @Override
     public void changeVisibility(boolean isVisible) {
@@ -105,32 +135,6 @@ public class SignUpActivity extends AppCompatActivity implements ComponentMethod
             return true;
         else
             return false;
-    }
-
-    public void signUpBtnClick(View view) {
-        if (stnoSignUp.getText().toString().equals("") || nationalIdSignUp.getText().toString().equals("")
-                || entryYearSignUp.getText().toString().equals("") || averageSignUp.getText().toString().equals("")) {
-            Toast.makeText(SignUpActivity.this, "لطفا موارد ستاره دار را وارد نمایید.",
-                    Toast.LENGTH_LONG).show();
-        } else {
-            try {
-                if (checkAvg()) {
-                    Toast.makeText(SignUpActivity.this, "معدل وارد شده نادرست است.",
-                            Toast.LENGTH_LONG).show();
-                } else {
-                    if (checkEntryYear()) {
-                        Toast.makeText(SignUpActivity.this, "سال ورود نادرست است.",
-                                Toast.LENGTH_LONG).show();
-                    } else {
-                        changeVisibility(false);
-                        sendSignUpDataToServer();
-                    }
-                }
-            } catch (Exception ex) {
-                Toast.makeText(SignUpActivity.this, "معدل وارد شده نادرست است.",
-                        Toast.LENGTH_LONG).show();
-            }
-        }
     }
 
     private void sendSignUpDataToServer() {

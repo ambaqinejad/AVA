@@ -28,7 +28,7 @@ public class LoginActivity extends AppCompatActivity implements ComponentMethod 
 
     EditText loginNationalId, loginStno;
     Button loginEnterBtn;
-    TextView loginRegisterTextView,welcome;
+    TextView loginRegisterTextView, welcome;
     ProgressBar loginProgressBar;
     RequestQueue queue;
     String LOGIN_URL = UrlClass.loginURL;
@@ -53,6 +53,7 @@ public class LoginActivity extends AppCompatActivity implements ComponentMethod 
         setTypeFaceToComponent();
     }
 
+    @Override
     public void setTypeFaceToComponent() {
         Typeface typeface = Typeface.createFromAsset(getAssets(), "Fonts/Far_Naskh.ttf");
         loginNationalId.setTypeface(typeface);
@@ -121,6 +122,7 @@ public class LoginActivity extends AppCompatActivity implements ComponentMethod 
         };
         queue.add(request);
     }
+
     @Override
     public void changeVisibility(boolean isVisible) {
         if (isVisible) {
