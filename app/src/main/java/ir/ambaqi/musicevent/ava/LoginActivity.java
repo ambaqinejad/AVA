@@ -41,11 +41,43 @@ public class LoginActivity extends AppCompatActivity implements ComponentMethod 
         init();
     }
 
+    @Override
+    public void init() {
+        loginNationalId = findViewById(R.id.login_national_id);
+        loginStno = findViewById(R.id.login_stno);
+        loginRegisterTextView = findViewById(R.id.login_register_btn);
+        welcome = findViewById(R.id.welcome);
+        loginEnterBtn = findViewById(R.id.login_enter_btn);
+        loginProgressBar = findViewById(R.id.progress_bar_login);
+        queue = Volley.newRequestQueue(LoginActivity.this);
+        setTypeFaceToComponent();
+    }
+
+    public void setTypeFaceToComponent() {
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "Fonts/Far_Naskh.ttf");
+        loginNationalId.setTypeface(typeface);
+        loginStno.setTypeface(typeface);
+        loginRegisterTextView.setTypeface(typeface);
+        welcome.setTypeface(typeface);
+        loginEnterBtn.setTypeface(typeface);
+    }
+
     public void loginBtnClick(View view) {
         if (view.getId() == R.id.login_enter_btn)
             loginEnterBtnEventHandler();
         else if (view.getId() == R.id.login_register_btn)
             loginRegisterBtnEventHandler();
+    }
+
+    private void loginEnterBtnEventHandler() {
+        if (loginNationalId.getText().toString().equals("") ||
+                loginStno.getText().toString().equals(""))
+            Toast.makeText(getApplicationContext(), "لطفا موارد خواسته شده را وارد نمایید!",
+                    Toast.LENGTH_LONG).show();
+        else {
+            changeVisibility(false);
+            sendDataToServer();
+        }
     }
 
     private void loginRegisterBtnEventHandler() {
@@ -89,36 +121,6 @@ public class LoginActivity extends AppCompatActivity implements ComponentMethod 
         };
         queue.add(request);
     }
-
-    private void loginEnterBtnEventHandler() {
-
-        if (loginNationalId.getText().toString().equals("") ||
-                loginStno.getText().toString().equals(""))
-            Toast.makeText(getApplicationContext(), "لطفا موارد خواسته شده را وارد نمایید!",
-                    Toast.LENGTH_LONG).show();
-        else {
-            changeVisibility(false);
-            sendDataToServer();
-        }
-    }
-
-    @Override
-    public void init() {
-        Typeface typeface = Typeface.createFromAsset(getAssets(), "Fonts/Far_Naskh.ttf");
-        loginNationalId = findViewById(R.id.login_national_id);
-        loginNationalId.setTypeface(typeface);
-        loginStno = findViewById(R.id.login_stno);
-        loginStno.setTypeface(typeface);
-        loginRegisterTextView = findViewById(R.id.login_register_btn);
-        loginRegisterTextView.setTypeface(typeface);
-        welcome = findViewById(R.id.welcome);
-        welcome.setTypeface(typeface);
-        loginEnterBtn = findViewById(R.id.login_enter_btn);
-        loginEnterBtn.setTypeface(typeface);
-        loginProgressBar = findViewById(R.id.progress_bar_login);
-        queue = Volley.newRequestQueue(LoginActivity.this);
-    }
-
     @Override
     public void changeVisibility(boolean isVisible) {
         if (isVisible) {
