@@ -13,4 +13,7 @@
     <string name="national_id_sign_up">کد ملی</string>
     <string name="entry_year_sign_up">سال ورود به عنوان مثال ۱۳۹۷</string>
     <string name="average_sign_up">معدل کل</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

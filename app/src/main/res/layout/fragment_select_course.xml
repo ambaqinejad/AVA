@@ -1,0 +1,26 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context="fragments.SelectCourse">
+    <ImageView
+        android:id="@+id/select_course_image_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/course_select"
+        android:layout_margin="5dp"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:id="@+id/select_course_text_view_fragment"
+        android:text="انتخاب کلاس"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="#f91212"
+        android:layout_below="@+id/select_course_image_fragment"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

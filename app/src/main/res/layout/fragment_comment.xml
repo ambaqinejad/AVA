@@ -1,0 +1,26 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context="fragments.CommentFragment">
+    <ImageView
+        android:id="@+id/comment_image_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/comment"
+        android:layout_margin="5dp"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:id="@+id/comment_text_view_fragment"
+        android:text="نظردهی"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="#330145"
+        android:layout_below="@+id/comment_image_fragment"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

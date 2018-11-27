@@ -1,9 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainPage">
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background_main_page"
+        />
+
+   <RelativeLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="70dp"
+       android:layout_centerHorizontal="true">
+
+       <fragment
+           android:id="@+id/select_course_fragment"
+           class="fragments.SelectCourse"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignParentTop="true"
+           tools:layout="@layout/fragment_select_course" />
+       <fragment
+           android:id="@+id/my_plans_fragment"
+           class="fragments.MyPlansFragment"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           tools:layout="@layout/fragment_my_plans"
+           android:layout_toRightOf="@id/select_course_fragment"
+           android:layout_marginLeft="5dp"
+           android:layout_alignParentTop="true"
+           />
+
+       <fragment
+           android:id="@+id/comment_fragment"
+           class="fragments.CommentFragment"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           tools:layout="@layout/fragment_comment"
+           android:layout_below="@id/my_plans_fragment"
+           android:layout_marginTop="30dp"
+           android:layout_marginLeft="10dp"
+           android:layout_toRightOf="@id/update_information_fragment"
+           android:layout_alignParentBottom="true"
+           />
+       <fragment
+           android:id="@+id/update_information_fragment"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           class="fragments.UpdateInformationFragment"
+           tools:layout="@layout/fragment_update_information"
+           android:layout_below="@id/select_course_fragment"
+           android:layout_alignParentBottom="true" />
+   </RelativeLayout>
+
+
+
+
+
+</RelativeLayout>
