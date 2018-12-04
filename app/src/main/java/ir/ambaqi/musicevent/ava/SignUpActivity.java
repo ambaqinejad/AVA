@@ -42,16 +42,16 @@ public class SignUpActivity extends AppCompatActivity implements ComponentMethod
 
     @Override
     public void init() {
-        nameSignUp = findViewById(R.id.sign_up_name);
-        familySignUp = findViewById(R.id.sign_up_family);
-        stnoSignUp = findViewById(R.id.sign_up_stno);
-        nationalIdSignUp = findViewById(R.id.sign_up_national_id);
-        necessaryMessageText = findViewById(R.id.necessaryMessage);
-        majorSignUp = findViewById(R.id.sign_up_major);
-        entryYearSignUp = findViewById(R.id.sign_up_entry_year);
-        averageSignUp = findViewById(R.id.sign_up_average);
-        registerSignUp = findViewById(R.id.register_sign_up);
-        signUpProgressBar = findViewById(R.id.progress_bar_sign_up);
+        nameSignUp = (EditText) findViewById(R.id.sign_up_name);
+        familySignUp = (EditText) findViewById(R.id.sign_up_family);
+        stnoSignUp = (EditText) findViewById(R.id.sign_up_stno);
+        nationalIdSignUp = (EditText) findViewById(R.id.sign_up_national_id);
+        necessaryMessageText = (TextView) findViewById(R.id.necessaryMessage);
+        majorSignUp = (EditText) findViewById(R.id.sign_up_major);
+        entryYearSignUp = (EditText) findViewById(R.id.sign_up_entry_year);
+        averageSignUp = (EditText) findViewById(R.id.sign_up_average);
+        registerSignUp = (Button) findViewById(R.id.register_sign_up);
+        signUpProgressBar = (ProgressBar) findViewById(R.id.progress_bar_sign_up);
         signUpQueue = Volley.newRequestQueue(SignUpActivity.this);
     }
 

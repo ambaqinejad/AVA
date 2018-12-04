@@ -1,6 +1,242 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/menu_back"
+    android:orientation="vertical"
+    tools:context=".MainPage">
 
-</android.support.constraint.ConstraintLayout>
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/main_page_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".1"
+        android:background="@color/cardview_shadow_start_color">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/toolbar_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="سامانه آوا"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true"
+        android:layout_margin="20dp"
+        android:layout_weight=".9"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="3dp"
+            android:layout_weight="0.5"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/select_course_menu"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="3dp"
+                android:layout_weight=".33"
+                android:background="@drawable/select_curse_back"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/select_course_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/select_course_icon" />
+
+                <TextView
+                    android:id="@+id/select_course_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/select_course_image"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="3dp"
+                    android:text="انتخاب کلاس"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/comment_menu"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="3dp"
+                android:layout_weight=".33"
+                android:background="@drawable/comment_back"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/comment_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/comment_icon" />
+
+                <TextView
+                    android:id="@+id/comment_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/comment_image"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="3dp"
+                    android:text="نظر دهی"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/check_situation_menu"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="3dp"
+                android:layout_weight=".33"
+                android:background="@drawable/check_situation_back"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/check_situation_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/check_situation_icon" />
+
+                <TextView
+                    android:id="@+id/check_situation_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/check_situation_image"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="3dp"
+                    android:text="بررسی وضعیت"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="3dp"
+            android:layout_weight="0.5"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/my_plans_menu"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="3dp"
+                android:layout_weight=".33"
+                android:background="@drawable/my_plans_back"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/my_plans_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/my_plans_icon" />
+
+                <TextView
+                    android:id="@+id/my_plans_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/my_plans_image"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="3dp"
+                    android:text="برنامه های من"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/update_information_menu"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="3dp"
+                android:layout_weight=".33"
+                android:background="@drawable/update_info_back"
+                android:padding="5dp">
+                <ImageView
+                    android:id="@+id/update_information_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/update_information_icon" />
+
+                <TextView
+                    android:id="@+id/update_information_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/update_information_image"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="3dp"
+                    android:text="بروزرسانی اطلاعات"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/exit_menu"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="3dp"
+                android:layout_weight=".33"
+                android:background="@drawable/exit_back"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/exit_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/exit_icon" />
+
+                <TextView
+                    android:id="@+id/exit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/exit_image"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="3dp"
+                    android:text="خروج"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+
+    <!--<ImageView--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent"--><!--android:scaleType="centerCrop"--><!--android:src="@drawable/background_main_page"--><!--/>-->
+
+    <!--<RelativeLayout--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--android:layout_marginTop="70dp"--><!--android:layout_centerHorizontal="true">-->
+
+    <!--<fragment--><!--android:id="@+id/select_course_fragment"--><!--class="fragments.SelectCourse"--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--android:layout_alignParentTop="true"--><!--tools:layout="@layout/fragment_select_course" />--><!--<fragment--><!--android:id="@+id/my_plans_fragment"--><!--class="fragments.MyPlansFragment"--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--tools:layout="@layout/fragment_my_plans"--><!--android:layout_toRightOf="@id/select_course_fragment"--><!--android:layout_marginLeft="5dp"--><!--android:layout_alignParentTop="true"--><!--/>-->
+
+    <!--<fragment--><!--android:id="@+id/comment_fragment"--><!--class="fragments.CommentFragment"--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--tools:layout="@layout/fragment_comment"--><!--android:layout_below="@id/my_plans_fragment"--><!--android:layout_marginTop="30dp"--><!--android:layout_marginLeft="10dp"--><!--android:layout_toRightOf="@id/update_information_fragment"--><!--android:layout_alignParentBottom="true"--><!--/>--><!--<fragment--><!--android:id="@+id/update_information_fragment"--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--class="fragments.UpdateInformationFragment"--><!--tools:layout="@layout/fragment_update_information"--><!--android:layout_below="@id/select_course_fragment"--><!--android:layout_alignParentBottom="true" />--><!--</RelativeLayout>-->

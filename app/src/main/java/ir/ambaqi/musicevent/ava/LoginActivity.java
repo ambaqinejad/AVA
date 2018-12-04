@@ -43,12 +43,12 @@ public class LoginActivity extends AppCompatActivity implements ComponentMethod 
 
     @Override
     public void init() {
-        loginNationalId = findViewById(R.id.login_national_id);
-        loginStno = findViewById(R.id.login_stno);
-        loginRegisterTextView = findViewById(R.id.login_register_btn);
-        welcome = findViewById(R.id.welcome);
-        loginEnterBtn = findViewById(R.id.login_enter_btn);
-        loginProgressBar = findViewById(R.id.progress_bar_login);
+        loginNationalId = (EditText) findViewById(R.id.login_national_id);
+        loginStno = (EditText) findViewById(R.id.login_stno);
+        loginRegisterTextView = (TextView) findViewById(R.id.login_register_btn);
+        welcome = (TextView) findViewById(R.id.welcome);
+        loginEnterBtn = (Button) findViewById(R.id.login_enter_btn);
+        loginProgressBar = (ProgressBar) findViewById(R.id.progress_bar_login);
         queue = Volley.newRequestQueue(LoginActivity.this);
         setTypeFaceToComponent();
     }
