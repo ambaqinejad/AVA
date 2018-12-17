@@ -48,6 +48,7 @@
 
             <RelativeLayout
                 android:id="@+id/select_course_menu"
+                android:onClick="menuClick"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="3dp"
@@ -77,6 +78,7 @@
 
             <RelativeLayout
                 android:id="@+id/comment_menu"
+                android:onClick="menuClick"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="3dp"
@@ -106,6 +108,7 @@
 
             <RelativeLayout
                 android:id="@+id/check_situation_menu"
+                android:onClick="menuClick"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="3dp"
@@ -144,6 +147,7 @@
 
             <RelativeLayout
                 android:id="@+id/my_plans_menu"
+                android:onClick="menuClick"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="3dp"
@@ -173,6 +177,7 @@
 
             <RelativeLayout
                 android:id="@+id/update_information_menu"
+                android:onClick="menuClick"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="3dp"
@@ -202,6 +207,7 @@
 
             <RelativeLayout
                 android:id="@+id/exit_menu"
+                android:onClick="menuClick"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="3dp"

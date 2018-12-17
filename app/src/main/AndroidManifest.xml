@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ir.ambaqi.musicevent.ava">
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -11,18 +12,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SignUpActivity"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".LoginActivity"
+        <activity
+            android:name=".LoginActivity"
             android:screenOrientation="portrait">
-        </activity>
-        <activity android:name=".MainPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SignUpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainPage"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SelectCourseActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".CourseDetailActivity"></activity>
     </application>
 
 </manifest>

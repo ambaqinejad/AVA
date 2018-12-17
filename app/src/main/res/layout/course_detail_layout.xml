@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="5sp"
+    android:orientation="vertical"
+    android:background="#00384b">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/course_name_in_detail"
+        android:text="نام درس: هوش مصنوعی"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        android:padding="5dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/teacher_name_in_detail"
+        android:text="نام استاد: نیک انجام"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        android:padding="5dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/unit_number_in_detail"
+        android:text="تعداد واحد: ۳"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        android:padding="5dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/course_day_in_detail"
+        android:text="روزهای برگزاری: ۱شنبه . ۳ شنبه"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        android:padding="5dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/course_time_in_detail"
+        android:text="ساعات برگزاری: ۹ - ۱۰:۳۰"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        android:padding="5dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/class_capacity_in_detail"
+        android:text="ظرفیت کلاس: ۳۰"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        android:padding="5dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/exam_day_in_detail"
+        android:text="روز آزمون: ۳شنبه"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        android:padding="5dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/exam_time_in_detail"
+        android:text="زمان آزمون: ۸ - ۱۰:۳۰"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        android:padding="5dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/semester_in_detail"
+        android:text="ترم ارائه: ۹۴.۱"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        android:padding="5dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pre_course_in_detail"
+        android:text="پیشنیاز: طراحی الگوریتم"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        android:padding="5dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/peri_course_in_detail"
+
+        android:text="هم نیاز: سیستم ها و سیگنال ها"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        android:padding="5dp"/>
+</LinearLayout>
