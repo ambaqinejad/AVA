@@ -1,4 +1,4 @@
-package ir.ambaqi.musicevent.ava;
+package Interfaces;
 
 public interface ComponentMethod {
     void init();

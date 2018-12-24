@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sunday_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+    <RelativeLayout
+        android:id="@+id/sunday_title"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/week_days_title_back"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/sunday_title_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/sunday_title_text"
+            android:textColor="@color/white"
+            android:textSize="@dimen/max_text_size_schedule"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/times_of_week_days"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/sunday_7.30_9"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight=".2"
+            android:text="@string/_7_30_9"
+            android:textColor="@color/white"
+            android:textSize="@dimen/min_text_size_in_schedule"
+            android:textStyle="normal" />
+
+        <ImageButton
+            android:id="@+id/sun_7.30_9_left_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight=".1"
+            android:background="@drawable/times_of_week_days"
+            android:src="@drawable/left_scroll_button_icon" />
+
+        <TextView
+            android:id="@+id/course_name_sun_7.30_9"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight=".5"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="@dimen/min_text_size_in_schedule"
+            android:textStyle="normal" />
+
+        <ImageButton
+            android:id="@+id/sun_7.30_9_right_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight=".1"
+            android:background="@drawable/times_of_week_days"
+            android:src="@drawable/right_scroll_button_icon" />
+
+        <ImageButton
+            android:id="@+id/sun_7.30_9_delete_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight=".1"
+            android:background="@drawable/times_of_week_days"
+            android:src="@drawable/delete_name_of_course_icon" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/times_of_week_days"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/sunday_9_10.30"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight=".2"
+            android:text="@string/_9_10_30"
+            android:textColor="@color/white"
+            android:textSize="@dimen/min_text_size_in_schedule"
+            android:textStyle="normal" />
+
+        <ImageButton
+            android:id="@+id/sun_9_10.30_left_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight=".1"
+            android:background="@drawable/times_of_week_days"
+            android:src="@drawable/left_scroll_button_icon" />
+
+        <TextView
+            android:id="@+id/course_name_sun_9_10.30"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight=".5"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="@dimen/min_text_size_in_schedule"
+            android:textStyle="normal" />
+
+        <ImageButton
+            android:id="@+id/sun_9_10.30_right_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight=".1"
+            android:background="@drawable/times_of_week_days"
+            android:src="@drawable/right_scroll_button_icon" />
+
+        <ImageButton
+            android:id="@+id/sun_9_10.30_delete_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight=".1"
+            android:background="@drawable/times_of_week_days"
+            android:src="@drawable/delete_name_of_course_icon" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/times_of_week_days"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/sunday_10.30_12"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight=".2"
+            android:text="@string/_10_30_12"
+            android:textColor="@color/white"
+            android:textSize="@dimen/min_text_size_in_schedule"
+            android:textStyle="normal" />
+
+        <ImageButton
+            android:id="@+id/sun_10.30_12_left_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight=".1"
+            android:background="@drawable/times_of_week_days"
+            android:src="@drawable/left_scroll_button_icon" />
+
+        <TextView
+            android:id="@+id/course_name_sun_10.30_12"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight=".5"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="@dimen/min_text_size_in_schedule"
+            android:textStyle="normal" />
+
+        <ImageButton
+            android:id="@+id/sun_10.30_12_right_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight=".1"
+            android:background="@drawable/times_of_week_days"
+            android:src="@drawable/right_scroll_button_icon" />
+
+        <ImageButton
+            android:id="@+id/sun_10.30_12_delete_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight=".1"
+            android:background="@drawable/times_of_week_days"
+            android:src="@drawable/delete_name_of_course_icon" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/times_of_week_days"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/sunday_13.30_15"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight=".2"
+            android:text="@string/_13_30_15"
+            android:textColor="@color/white"
+            android:textSize="@dimen/min_text_size_in_schedule"
+            android:textStyle="normal" />
+
+        <ImageButton
+            android:id="@+id/sun_13.30_15_left_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight=".1"
+            android:background="@drawable/times_of_week_days"
+            android:src="@drawable/left_scroll_button_icon" />
+
+        <TextView
+            android:id="@+id/course_name_sun_13.30_15"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight=".5"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="@dimen/min_text_size_in_schedule"
+            android:textStyle="normal" />
+
+        <ImageButton
+            android:id="@+id/sun_13.30_15_right_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight=".1"
+            android:background="@drawable/times_of_week_days"
+            android:src="@drawable/right_scroll_button_icon" />
+
+        <ImageButton
+            android:id="@+id/sun_13.30_15_delete_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight=".1"
+            android:background="@drawable/times_of_week_days"
+            android:src="@drawable/delete_name_of_course_icon" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/times_of_week_days"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/sunday_15.30_17"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight=".2"
+            android:text="@string/_15_30_17"
+            android:textColor="@color/white"
+            android:textSize="@dimen/min_text_size_in_schedule"
+            android:textStyle="normal" />
+
+        <ImageButton
+            android:id="@+id/sun_15.30_17_left_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight=".1"
+            android:background="@drawable/times_of_week_days"
+            android:src="@drawable/left_scroll_button_icon" />
+
+        <TextView
+            android:id="@+id/course_name_sun_15.30_17"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight=".5"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="@dimen/min_text_size_in_schedule"
+            android:textStyle="normal" />
+
+        <ImageButton
+            android:id="@+id/sun_15.30_17_right_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight=".1"
+            android:background="@drawable/times_of_week_days"
+            android:src="@drawable/right_scroll_button_icon" />
+
+        <ImageButton
+            android:id="@+id/sun_15.30_17_delete_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight=".1"
+            android:background="@drawable/times_of_week_days"
+            android:src="@drawable/delete_name_of_course_icon" />
+    </LinearLayout>
+</LinearLayout>

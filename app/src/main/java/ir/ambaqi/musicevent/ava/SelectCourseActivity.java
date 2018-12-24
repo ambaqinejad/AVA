@@ -1,11 +1,11 @@
 package ir.ambaqi.musicevent.ava;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -22,8 +22,11 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 
+import Interfaces.ComponentMethod;
 import data.CourseDetail;
+import data.CourseDetailSerializable;
 import data.CourseForRecyclerView;
 import data.UrlClass;
 import recyclerview_handler.ChildAdapter;
@@ -36,8 +39,8 @@ public class SelectCourseActivity extends AppCompatActivity implements Component
     private ArrayList<CourseDetail> courseDetails;
     private RecyclerView selectCourseRecyclerView;
     private ArrayList<CourseForRecyclerView> courses;
-    public HashMap<String, CourseDetail> selectedClasses;
-    private Button reg;
+    public HashMap<String, CourseDetailSerializable> selectedClasses;
+    private Button scheduleButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +56,7 @@ public class SelectCourseActivity extends AppCompatActivity implements Component
         queue = Volley.newRequestQueue(SelectCourseActivity.this);
         courseDetails = new ArrayList<>();
         courses = new ArrayList<>();
-        reg = (Button) findViewById(R.id.register_selected_class);
+        scheduleButton = (Button) findViewById(R.id.schedule_selected_class);
         selectedClasses = new HashMap<>();
     }
 
@@ -64,7 +67,8 @@ public class SelectCourseActivity extends AppCompatActivity implements Component
 
     @Override
     public void setTypeFaceToComponent() {
-
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "Fonts/Far_Naskh.ttf");
+        scheduleButton.setTypeface(typeface);
     }
 
     private void sendRequestToServer() {
@@ -155,12 +159,25 @@ public class SelectCourseActivity extends AppCompatActivity implements Component
         selectCourseRecyclerView.setLayoutManager(new LinearLayoutManager(SelectCourseActivity.this));
         selectCourseRecyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
-        reg.setOnClickListener(new View.OnClickListener() {
+        scheduleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 selectedClasses = ParentViewHolder.selectedClasses;
+                ArrayList<CourseDetailSerializable> selectedClassesList = new ArrayList<>();
+                mapSCHMToSCAL(selectedClasses, selectedClassesList);
+                Intent i = new Intent(SelectCourseActivity.this, ScheduleActivity.class);
+                i.putExtra("selectedClasses", selectedClassesList);
+                startActivity(i);
             }
         });
+    }
+
+    private void mapSCHMToSCAL(HashMap<String, CourseDetailSerializable> selectedClasses, ArrayList<CourseDetailSerializable> selectedClassesList) {
+        Iterator i = selectedClasses.keySet().iterator();
+        while (i.hasNext()) {
+            String key = (String) i.next();
+            selectedClassesList.add(selectedClasses.get(key));
+        }
     }
 
 }

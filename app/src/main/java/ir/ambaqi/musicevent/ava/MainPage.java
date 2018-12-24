@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import Interfaces.ComponentMethod;
+
 public class MainPage extends AppCompatActivity implements ComponentMethod {
 
     Toolbar mainPageToolbar;

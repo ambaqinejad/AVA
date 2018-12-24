@@ -2,4 +2,6 @@
 <resources>
     <dimen name="welcome_message_size">40sp</dimen>
     <dimen name="welcome_message_marigin_top">10dp</dimen>
+    <dimen name="min_text_size_in_schedule">12sp</dimen>
+    <dimen name="max_text_size_schedule">16sp</dimen>
 </resources>

@@ -11,24 +11,40 @@
         android:padding="8dp"
         android:layout_width="0dp"
         android:layout_weight=".20"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent" />
     <CheckBox
         android:id="@+id/select_checkbox"
         android:layout_width="0dp"
         android:padding="8dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight=".20"/>
-    <TextView
-        android:id="@+id/course_name_parent_id"
+    <LinearLayout
         android:layout_width="0dp"
+        android:layout_height="match_parent"
         android:layout_weight=".40"
-        android:layout_height="wrap_content"
-        android:text="هوش مصنوعی"
-        android:gravity="center"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:padding="8dp"
-        android:textColor="@color/white"/>
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/course_name_parent_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="هوش مصنوعی"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:textColor="@color/white"/>
+        <TextView
+            android:id="@+id/class_code_parent_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="کد کلاس: 2"
+            android:gravity="center"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
     <ImageView
         android:id="@+id/open_child_id"
         android:layout_width="0dp"
@@ -36,5 +52,5 @@
         android:padding="8dp"
         android:background="@drawable/back_of_parent_item_in_recycler_view"
         android:src="@drawable/open_child_icon"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent" />
 </LinearLayout>

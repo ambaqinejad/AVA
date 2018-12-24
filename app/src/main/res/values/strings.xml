@@ -16,4 +16,14 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="saturday_title_text">شنبه</string>
+    <string name="_7_30_9">7:30 - 9</string>
+    <string name="_9_10_30">9 - 10:30</string>
+    <string name="_10_30_12">10:30 - 12</string>
+    <string name="_13_30_15">13:30 - 15</string>
+    <string name="_15_30_17">15:30 - 17</string>
+    <string name="sunday_title_text">یکشنبه</string>
+    <string name="monday_title_text">دوشنبه</string>
+    <string name="tuesday_title_text">سه شنبه</string>
+    <string name="wednesday_title_text">چهار شنبه</string>
 </resources>

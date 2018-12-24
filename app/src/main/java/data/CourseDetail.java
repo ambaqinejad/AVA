@@ -11,7 +11,7 @@ public class CourseDetail implements Parcelable {
     private String examTime;
     private String examDay;
     private String courseTime;
-    public ArrayList<String> courseDays;
+    private ArrayList<String> courseDays;
     private String capacity;
     private String registered;
     private String semester;
@@ -20,54 +20,44 @@ public class CourseDetail implements Parcelable {
     private String courseId;
     private String courseName;
     private String unitNumber;
-
-    public String getRegistered() {
-        return registered;
-    }
-
-    public void setRegistered(String registered) {
-        this.registered = registered;
-    }
-
     private String havePreCourse;
     private String havePeriCourse;
-
 
     public CourseDetail() {
 
     }
 
-    public CourseDetail(String classId, String examTime, String examDay,
-                        String courseTime, ArrayList<String> courseDays,
-                        String capacity, String registered, String semester,
-                        String teacherId, String teacherName, String courseId,
-                        String courseName, String unitNumber, String havePreCourse,
-                        String havePeriCourse) {
-        this.classId = classId;
-        this.examTime = examTime;
-        this.examDay = examDay;
-        this.courseTime = courseTime;
-        this.courseDays = courseDays;
-        this.capacity = capacity;
-        this.registered = registered;
-        this.semester = semester;
-        this.teacherId = teacherId;
-        this.teacherName = teacherName;
-        this.courseId = courseId;
-        this.courseName = courseName;
-        this.unitNumber = unitNumber;
-        this.havePreCourse = havePreCourse;
-        this.havePeriCourse = havePeriCourse;
-    }
+//    public CourseDetail(String classId, String examTime, String examDay,
+//                        String courseTime, ArrayList<String> courseDays,
+//                        String capacity, String registered, String semester,
+//                        String teacherId, String teacherName, String courseId,
+//                        String courseName, String unitNumber, String havePreCourse,
+//                        String havePeriCourse) {
+//        this.classId = classId;
+//        this.examTime = examTime;
+//        this.examDay = examDay;
+//        this.courseTime = courseTime;
+//        this.courseDays = courseDays;
+//        this.capacity = capacity;
+//        this.registered = registered;
+//        this.semester = semester;
+//        this.teacherId = teacherId;
+//        this.teacherName = teacherName;
+//        this.courseId = courseId;
+//        this.courseName = courseName;
+//        this.unitNumber = unitNumber;
+//        this.havePreCourse = havePreCourse;
+//        this.havePeriCourse = havePeriCourse;
+//    }
 
     protected CourseDetail(Parcel in) {
         this.classId = in.readString();
         this.examTime = in.readString();
         this.examDay = in.readString();
         this.courseTime = in.readString();
-        this.courseDays = courseDays;
+        this.courseDays = new ArrayList<>();
+        this.courseDays = in.readArrayList(String.class.getClassLoader());
         this.capacity = in.readString();
-        this.registered = in.readString();
         this.semester = in.readString();
         this.teacherId = in.readString();
         this.teacherName = in.readString();
@@ -76,6 +66,7 @@ public class CourseDetail implements Parcelable {
         this.unitNumber = in.readString();
         this.havePreCourse = in.readString();
         this.havePeriCourse = in.readString();
+        this.registered = in.readString();
     }
 
     @Override
@@ -95,6 +86,7 @@ public class CourseDetail implements Parcelable {
         dest.writeString(havePreCourse);
         dest.writeString(havePeriCourse);
     }
+
 
     @Override
     public int describeContents() {
@@ -224,5 +216,13 @@ public class CourseDetail implements Parcelable {
 
     public void setHavePeriCourse(String havePeriCourse) {
         this.havePeriCourse = havePeriCourse;
+    }
+
+    public String getRegistered() {
+        return registered;
+    }
+
+    public void setRegistered(String registered) {
+        this.registered = registered;
     }
 }

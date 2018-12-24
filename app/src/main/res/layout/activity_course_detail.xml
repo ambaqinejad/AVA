@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/menu_back"
+    android:background="@drawable/back_of_menus"
     android:orientation="vertical"
     tools:context=".CourseDetailActivity">
 
@@ -139,7 +139,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/class_time_in_course_detail_activity"
+                    android:id="@+id/course_time_in_course_detail_activity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -258,7 +258,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/capacity_text_in_course_detail"
+                android:id="@+id/capacity_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -320,7 +320,7 @@
                 android:textStyle="bold" />
 
             <ProgressBar
-                android:id="@+id/ProgressBar"
+                android:id="@+id/registered_per_capacity_progressbar_in_course_detail"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"

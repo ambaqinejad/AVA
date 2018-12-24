@@ -5,14 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/menu_back"
+    android:background="@drawable/back_of_menus"
     tools:context=".SelectCourseActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight=".1"
+        android:textSize="14sp"
+        android:layout_marginTop="20dp"
+        android:text="حداقل تعداد واحد برابر ۱۲ و حد اکثر آن برابر ۲۴ واحد است"
+        android:textColor="#ff0000"
+        android:textStyle="bold"
+        />
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:padding="20dp"
-        android:layout_weight=".9"
+        android:layout_weight=".8"
         android:background="@drawable/recycler_view_back"
         android:layout_margin="10dp">
         <android.support.v7.widget.RecyclerView
@@ -23,8 +34,15 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_weight=".20"
+        android:layout_weight=".1"
         android:text="@string/register"
-        android:id="@+id/register_selected_class"/>
+        android:layout_margin="15dp"
+        android:id="@+id/schedule_selected_class"
+        android:layout_gravity="center"
+        android:background="@drawable/schudule_btn_back"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:textColor="@color/white"
+        />
 
 </LinearLayout>
