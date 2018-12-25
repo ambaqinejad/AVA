@@ -2,6 +2,7 @@ package recyclerview_handler;
 
 import android.content.Context;
 import android.graphics.Typeface;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -23,7 +24,7 @@ public class ParentViewHolder extends GroupViewHolder implements Mapping{
     private TextView courseName;
     private TextView classID;
     private CheckBox selectCheckBox;
-    public static HashMap<String, CourseDetailSerializable> selectedClasses = new HashMap<>();
+
     public ParentViewHolder(View itemView) {
         super(itemView);
         courseName = (TextView) itemView.findViewById(R.id.course_name_parent_id);
@@ -32,7 +33,6 @@ public class ParentViewHolder extends GroupViewHolder implements Mapping{
     }
 
     public void bind(CourseForRecyclerView course, final CourseDetail courseDetail, final Context context) {
-        selectedClasses.clear();
         Typeface typeface = Typeface.createFromAsset(context.getAssets(), "Fonts/Far_Naskh.ttf");
         courseName.setTypeface(typeface);
         classID.setTypeface(typeface);
@@ -43,10 +43,12 @@ public class ParentViewHolder extends GroupViewHolder implements Mapping{
         selectCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked)
-                    selectedClasses.put(courseDetail.getClassId(), courseDetailSerializable);
+                if(isChecked) {
+                    ClassesHashMap.selectedClasses.put(courseDetail.getClassId(), courseDetailSerializable);
+                    Log.v("amanamanama", ClassesHashMap.selectedClasses.size()+"");
+                }
                 else
-                    selectedClasses.remove(courseDetail.getClassId());
+                    ClassesHashMap.selectedClasses.remove(courseDetail.getClassId());
             }
         });
     }

@@ -30,6 +30,7 @@ import data.CourseDetailSerializable;
 import data.CourseForRecyclerView;
 import data.UrlClass;
 import recyclerview_handler.ChildAdapter;
+import recyclerview_handler.ClassesHashMap;
 import recyclerview_handler.ParentViewHolder;
 
 public class SelectCourseActivity extends AppCompatActivity implements ComponentMethod {
@@ -155,6 +156,7 @@ public class SelectCourseActivity extends AppCompatActivity implements Component
     }
 
     private void setUiProperties() {
+        ClassesHashMap.selectedClasses.clear();
         ChildAdapter adapter = new ChildAdapter(courses, SelectCourseActivity.this);
         selectCourseRecyclerView.setLayoutManager(new LinearLayoutManager(SelectCourseActivity.this));
         selectCourseRecyclerView.setAdapter(adapter);
@@ -162,7 +164,7 @@ public class SelectCourseActivity extends AppCompatActivity implements Component
         scheduleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                selectedClasses = ParentViewHolder.selectedClasses;
+                selectedClasses = ClassesHashMap.selectedClasses;
                 ArrayList<CourseDetailSerializable> selectedClassesList = new ArrayList<>();
                 mapSCHMToSCAL(selectedClasses, selectedClassesList);
                 Intent i = new Intent(SelectCourseActivity.this, ScheduleActivity.class);

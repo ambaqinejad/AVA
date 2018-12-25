@@ -12,7 +12,7 @@ import data.CourseDetailSerializable;
 import ir.ambaqi.musicevent.ava.R;
 
 public abstract class LayoutHandler {
-    protected ArrayList<Integer> listsCurrentItemIndex;
+    protected int currentItemIndex;
     protected LinearLayout layout;
     protected TextView time;
     protected ImageButton left, right, remove;
@@ -22,12 +22,10 @@ public abstract class LayoutHandler {
     //parent
     public LayoutHandler(LinearLayout layout, CourseNameViews courseNameViews,
                          ArrayList<CourseDetailSerializable> courseList) {
-        this.listsCurrentItemIndex = new ArrayList<>();
+        this.currentItemIndex = 0;
         this.layout = layout;
         this.courseNameViews = courseNameViews;
         this.courseList = courseList;
-        for (int i = 0; i < this.courseNameViews.getListOfCourseLists().size(); i++)
-            listsCurrentItemIndex.add(0);
     }
 
 
@@ -42,160 +40,151 @@ public abstract class LayoutHandler {
         String courseTime = course.getCourseTime();
         if (course.getCourseDays().size() > 1) {
             courseSecondDay = course.getCourseDays().get(1);
-            CourseProperties courseProperties1 = getCourseProperties(course, courseFirstDay, courseTime);
-            CourseProperties courseProperties2 = getCourseProperties(course, courseSecondDay, courseTime);
-            if (courseProperties1.getCourseTextView().getText().toString().equalsIgnoreCase("") &&
-                    courseProperties2.getCourseTextView().getText().toString().equalsIgnoreCase("")) {
-                courseProperties1.getCourseTextView().setText(courseName + "\n" + "کد کلاس:" + classCode);
-                courseProperties2.getCourseTextView().setText(courseName + "\n" + "کد کلاس:" + classCode);
+            if (getCourseTextView(courseFirstDay, courseTime).getText().toString().equalsIgnoreCase("") &&
+                    getCourseTextView(courseSecondDay, courseTime).getText().toString().equalsIgnoreCase("")){
+                getCourseTextView(courseFirstDay, courseTime).setText(courseName + "\n" + "کد کلاس:" + classCode);
+                getCourseTextView(courseSecondDay, courseTime).setText(courseName + "\n" + "کد کلاس:" + classCode);
+                int tag1 = (int) getCourseTextView(courseSecondDay, courseTime).getTag();
+                int tag2 = (int) getCourseTextView(courseFirstDay, courseTime).getTag();
+                getCourseTextView(courseFirstDay, courseTime).setTag(tag1);
+                getCourseTextView(courseSecondDay, courseTime).setTag(tag2);
             }
         } else {
-            CourseProperties courseProperties1 = getCourseProperties(course, courseFirstDay, courseTime);
-            if (courseProperties1.getCourseTextView().getText().toString().equalsIgnoreCase("")) {
-                courseProperties1.getCourseTextView().setText(courseName + "\n" + "کد کلاس:" + classCode);
+            if (getCourseTextView(courseFirstDay, courseTime).getText().toString().equalsIgnoreCase("")) {
+                getCourseTextView(courseFirstDay, courseTime).setText(courseName + "\n" + "کد کلاس:" + classCode);
             }
         }
     }
 
-    public CourseProperties getCourseProperties(CourseDetailSerializable course, String day, String courseTime) {
-        CourseProperties courseProperties = new CourseProperties();
-        ArrayList<ArrayList<CourseDetailSerializable>> coursesLists = courseNameViews.getListOfCourseLists();
+    public TextView getCourseTextView(String day, String courseTime) {
         if (day.equalsIgnoreCase("0") && courseTime.equalsIgnoreCase("7:30"))
-            setCourseProperties(0, courseProperties, course, coursesLists);
+            return  courseNameViews.getTextViewArrayList().get(0);
         else if (day.equalsIgnoreCase("0") && courseTime.equalsIgnoreCase("9"))
-            setCourseProperties(1, courseProperties, course, coursesLists);
+            return courseNameViews.getTextViewArrayList().get(1);
         else if (day.equalsIgnoreCase("0") && courseTime.equalsIgnoreCase("10:30"))
-            setCourseProperties(2, courseProperties, course, coursesLists);
+            return courseNameViews.getTextViewArrayList().get(2);
         else if (day.equalsIgnoreCase("0") && courseTime.equalsIgnoreCase("13:30"))
-            setCourseProperties(3, courseProperties, course, coursesLists);
+            return courseNameViews.getTextViewArrayList().get(3);
         else if (day.equalsIgnoreCase("0") && courseTime.equalsIgnoreCase("15:30"))
-            setCourseProperties(4, courseProperties, course, coursesLists);
+            return courseNameViews.getTextViewArrayList().get(4);
         else if (day.equalsIgnoreCase("1") && courseTime.equalsIgnoreCase("7:30"))
-            setCourseProperties(5, courseProperties, course, coursesLists);
+            return courseNameViews.getTextViewArrayList().get(5);
         else if (day.equalsIgnoreCase("1") && courseTime.equalsIgnoreCase("9"))
-            setCourseProperties(6, courseProperties, course, coursesLists);
+            return courseNameViews.getTextViewArrayList().get(6);
         else if (day.equalsIgnoreCase("1") && courseTime.equalsIgnoreCase("10:30"))
-            setCourseProperties(7, courseProperties, course, coursesLists);
+            return courseNameViews.getTextViewArrayList().get(7);
         else if (day.equalsIgnoreCase("1") && courseTime.equalsIgnoreCase("13:30"))
-            setCourseProperties(8, courseProperties, course, coursesLists);
+            return courseNameViews.getTextViewArrayList().get(8);
         else if (day.equalsIgnoreCase("1") && courseTime.equalsIgnoreCase("15:30"))
-            setCourseProperties(9, courseProperties, course, coursesLists);
+            return courseNameViews.getTextViewArrayList().get(9);
         else if (day.equalsIgnoreCase("2") && courseTime.equalsIgnoreCase("7:30"))
-            setCourseProperties(10, courseProperties, course, coursesLists);
+            return courseNameViews.getTextViewArrayList().get(10);
         else if (day.equalsIgnoreCase("2") && courseTime.equalsIgnoreCase("9"))
-            setCourseProperties(11, courseProperties, course, coursesLists);
+            return courseNameViews.getTextViewArrayList().get(11);
         else if (day.equalsIgnoreCase("2") && courseTime.equalsIgnoreCase("10:30"))
-            setCourseProperties(12, courseProperties, course, coursesLists);
+            return courseNameViews.getTextViewArrayList().get(12);
         else if (day.equalsIgnoreCase("2") && courseTime.equalsIgnoreCase("13:30"))
-            setCourseProperties(13, courseProperties, course, coursesLists);
+            return courseNameViews.getTextViewArrayList().get(13);
         else if (day.equalsIgnoreCase("2") && courseTime.equalsIgnoreCase("15:30"))
-            setCourseProperties(14, courseProperties, course, coursesLists);
+            return courseNameViews.getTextViewArrayList().get(14);
         else if (day.equalsIgnoreCase("3") && courseTime.equalsIgnoreCase("7:30"))
-            setCourseProperties(15, courseProperties, course, coursesLists);
+            return courseNameViews.getTextViewArrayList().get(15);
         else if (day.equalsIgnoreCase("3") && courseTime.equalsIgnoreCase("9"))
-            setCourseProperties(16, courseProperties, course, coursesLists);
+            return courseNameViews.getTextViewArrayList().get(16);
         else if (day.equalsIgnoreCase("3") && courseTime.equalsIgnoreCase("10:30"))
-            setCourseProperties(17, courseProperties, course, coursesLists);
+            return courseNameViews.getTextViewArrayList().get(17);
         else if (day.equalsIgnoreCase("3") && courseTime.equalsIgnoreCase("13:30"))
-            setCourseProperties(18, courseProperties, course, coursesLists);
+            return courseNameViews.getTextViewArrayList().get(18);
         else if (day.equalsIgnoreCase("3") && courseTime.equalsIgnoreCase("15:30"))
-            setCourseProperties(19, courseProperties, course, coursesLists);
+            return courseNameViews.getTextViewArrayList().get(19);
         else if (day.equalsIgnoreCase("4") && courseTime.equalsIgnoreCase("7:30"))
-            setCourseProperties(20, courseProperties, course, coursesLists);
+            return courseNameViews.getTextViewArrayList().get(20);
         else if (day.equalsIgnoreCase("4") && courseTime.equalsIgnoreCase("9"))
-            setCourseProperties(21, courseProperties, course, coursesLists);
+            return courseNameViews.getTextViewArrayList().get(21);
         else if (day.equalsIgnoreCase("4") && courseTime.equalsIgnoreCase("10:30"))
-            setCourseProperties(22, courseProperties, course, coursesLists);
+            return courseNameViews.getTextViewArrayList().get(22);
         else if (day.equalsIgnoreCase("4") && courseTime.equalsIgnoreCase("13:30"))
-            setCourseProperties(23, courseProperties, course, coursesLists);
-        else if (day.equalsIgnoreCase("4") && courseTime.equalsIgnoreCase("15:30"))
-            setCourseProperties(24, courseProperties, course, coursesLists);
-        return courseProperties;
-    }
-
-    private void setCourseProperties(int i, CourseProperties courseProperties, CourseDetailSerializable course,
-                                     ArrayList<ArrayList<CourseDetailSerializable>> coursesLists) {
-        courseProperties.setCourseTextView(courseNameViews.getTextViewArrayList().get(i));
-        courseProperties.setArrayListIndex(i);
-        courseProperties.setItemIndex(findCourseIndex(course, coursesLists.get(i)));
-        listsCurrentItemIndex.set(i, courseProperties.getItemIndex());
-    }
-
-    private int findCourseIndex(CourseDetailSerializable course, ArrayList<CourseDetailSerializable> courseDetailSerializables) {
-        for (int i = 0; i < courseDetailSerializables.size(); i++) {
-            if (course.equals(courseDetailSerializables.get(i)))
-                return i;
-        }
-        return -1;
+            return courseNameViews.getTextViewArrayList().get(23);
+        else
+            return courseNameViews.getTextViewArrayList().get(24);
     }
 
 
-    protected void setOnClickForButtons(int dayTimeTag) {
-        leftOnClick(dayTimeTag);
-        rightOnClick(dayTimeTag);
-        removeOnClick(dayTimeTag);
+    protected void setOnClickForButtons(int timeIndex) {
+        leftOnClick();
+        rightOnClick();
+        removeOnClick(timeIndex);
     }
 
-    private void rightOnClick(int dayTimeTag) {
-        removeCurrentText(dayTimeTag);
-        int currentIndex = listsCurrentItemIndex.get(dayTimeTag) + 1;
-        if(currentIndex == courseList.size()) {
-            listsCurrentItemIndex.set(dayTimeTag, 0);
-        } else {
-            listsCurrentItemIndex.set(dayTimeTag, currentIndex);
-        }
-        setNextText(dayTimeTag);
+    private void rightOnClick() {
+        right.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //removeCurrentText();
+                currentItemIndex++;
+                if (currentItemIndex == courseList.size())
+                    currentItemIndex = 0;
+                setNextText();
+            }
+        });
     }
 
-    private void setNextText(int dayTimeTag) {
+    private void leftOnClick() {
+        left.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                currentItemIndex--;
+                if (currentItemIndex == -1)
+                    currentItemIndex = courseList.size() - 1;
+                setNextText();
+            }
+        });
+    }
+
+    private void removeOnClick(final int timeIndex) {
+        remove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                courseNameViews.getTextViewArrayList().get(timeIndex).setText("");
+                int secondTextViewTag = (int) courseNameViews.getTextViewArrayList().get(timeIndex).getTag();
+                courseNameViews.getTextViewArrayList().get(secondTextViewTag).setText("");
+            }
+        });
+    }
+
+    private void setNextText() {
         CourseDetailSerializable nextCourse;
-        nextCourse = courseList.get(listsCurrentItemIndex.get(dayTimeTag));
+        nextCourse = courseList.get(currentItemIndex);
         String nextCourseFirstDay = nextCourse.getCourseDays().get(0);
-        String nextCourseSecondDay;
-
-
-    }
-
-    private void removeCurrentText(int dayTimeTag) {
-        CourseDetailSerializable currentCourse;
-        currentCourse = courseList.get(listsCurrentItemIndex.get(dayTimeTag));
-        String currentCourseFirstDay = currentCourse.getCourseDays().get(0);
-        String currentCourseSecondDay;
-        String currentCourseTime = currentCourse.getCourseTime();
-        CourseProperties courseProperties1 = getCourseProperties(currentCourse, currentCourseFirstDay, currentCourseTime);
-        courseProperties1.getCourseTextView().setText("");
-        if(currentCourse.getCourseDays().size() > 1) {
-            currentCourseSecondDay = currentCourse.getCourseDays().get(1);
-            CourseProperties courseProperties2 = getCourseProperties(currentCourse, currentCourseSecondDay, currentCourseTime);
-            courseProperties2.getCourseTextView().setText("");
+        String nextCourseSecondDay = "";
+        String nextCourseTime = nextCourse.getCourseTime();
+        String courseName = nextCourse.getCourseName();
+        String classCode = nextCourse.getClassId();
+        int whomDoesFirstDayTextViewSee = (int) getCourseTextView(nextCourseFirstDay, nextCourseTime).getTag();
+        int firstDayTextViewRealTag = (int) courseNameViews.getTextViewArrayList().get(whomDoesFirstDayTextViewSee).getTag();
+        getCourseTextView(nextCourseFirstDay, nextCourseTime).setTag(firstDayTextViewRealTag);
+        getTextViewByTag(whomDoesFirstDayTextViewSee).setTag(whomDoesFirstDayTextViewSee);
+        getTextViewByTag(whomDoesFirstDayTextViewSee).setText("");
+        if(nextCourse.getCourseDays().size() > 1) {
+            int whomDoesSecondDayTextViewSee;
+            nextCourseSecondDay = nextCourse.getCourseDays().get(1);
+            whomDoesSecondDayTextViewSee = (int) getCourseTextView(nextCourseSecondDay, nextCourseTime).getTag();
+            int secondDayTextViewRealTag = (int) courseNameViews.getTextViewArrayList().get(whomDoesSecondDayTextViewSee).getTag();
+            getCourseTextView(nextCourseSecondDay, nextCourseTime).setTag(secondDayTextViewRealTag);
+            getTextViewByTag(whomDoesSecondDayTextViewSee).setTag(whomDoesSecondDayTextViewSee);
+            getTextViewByTag(whomDoesSecondDayTextViewSee).setText("");
         }
-
-//        String classCode = course.getClassId();
-//        String courseFirstDay = course.getCourseDays().get(0);
-//        String courseSecondDay;
-//        String courseTime = course.getCourseTime();
-//        if (course.getCourseDays().size() > 1) {
-//            courseSecondDay = course.getCourseDays().get(1);
-//            CourseProperties courseProperties1 = getCourseProperties(course, courseFirstDay, courseTime);
-//            CourseProperties courseProperties2 = getCourseProperties(course, courseSecondDay, courseTime);
-//            if (courseProperties1.getCourseTextView().getText().toString().equalsIgnoreCase("") &&
-//                    courseProperties2.getCourseTextView().getText().toString().equalsIgnoreCase("")) {
-//                courseProperties1.getCourseTextView().setText(courseName + "\n" + "کد کلاس:" + classCode);
-//                courseProperties2.getCourseTextView().setText(courseName + "\n" + "کد کلاس:" + classCode);
-//            }
-//        } else {
-//            CourseProperties courseProperties1 = getCourseProperties(course, courseFirstDay, courseTime);
-//            if (courseProperties1.getCourseTextView().getText().toString().equalsIgnoreCase("")) {
-//                courseProperties1.getCourseTextView().setText(courseName + "\n" + "کد کلاس:" + classCode);
-//            }
-//        }
+        getCourseTextView(nextCourseFirstDay, nextCourseTime).setText(courseName + "\n" + "کد کلاس:" + classCode);
+        if (nextCourse.getCourseDays().size() > 1) {
+            getCourseTextView(nextCourseSecondDay, nextCourseTime).setText(courseName + "\n" + "کد کلاس:" + classCode);
+            int firstDayNewTag = (int) getCourseTextView(nextCourseSecondDay, nextCourseTime).getTag();
+            int secondDayNewTag = (int) getCourseTextView(nextCourseFirstDay, nextCourseTime).getTag();
+            getCourseTextView(nextCourseFirstDay, nextCourseTime).setTag(firstDayNewTag);
+            getCourseTextView(nextCourseSecondDay, nextCourseTime).setTag(secondDayNewTag);
+        }
     }
 
-    private void leftOnClick(int dayTimeTag) {
-
-    }
-
-    private void removeOnClick(int dayTimeTag) {
-
+    private TextView getTextViewByTag(int tag) {
+        return courseNameViews.getTextViewArrayList().get(tag);
     }
 }

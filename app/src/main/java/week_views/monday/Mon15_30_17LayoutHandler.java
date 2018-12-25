@@ -23,12 +23,14 @@ public class Mon15_30_17LayoutHandler extends LayoutHandler {
         left = (ImageButton) layout.findViewById(R.id.mon_15_30_17_left_button);
         right = (ImageButton) layout.findViewById(R.id.mon_15_30_17_right_button);
         remove = (ImageButton) layout.findViewById(R.id.mon_15_30_17_delete_button);
-        if (courseList == null|| courseList.size() == 0 || courseList.size() == 1) {
+        if (courseList == null|| courseList.size() == 0) {
             right.setVisibility(View.INVISIBLE);
             left.setVisibility(View.INVISIBLE);
+            remove.setVisibility(View.INVISIBLE);
         }
         if(courseList.size() > 0) {
             setTextForCourseNameAtFirst();
+            setOnClickForButtons(14);
         }
     }
 }

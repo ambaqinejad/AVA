@@ -72,6 +72,7 @@ public class ScheduleActivity extends AppCompatActivity implements ComponentMeth
         initLayout();
         initCourseName();
         setTextViewArrayList();
+        setTextViewTags();
         createArrayLists();
         setListOfCourseLists();
         initCourseNameViews();
@@ -141,6 +142,12 @@ public class ScheduleActivity extends AppCompatActivity implements ComponentMeth
         textViewArrayList.add(courseNameWed10_30_12);
         textViewArrayList.add(courseNameWed13_30_15);
         textViewArrayList.add(courseNameWed15_30_17);
+    }
+
+    private void setTextViewTags() {
+        for(int i = 0; i < textViewArrayList.size(); i++) {
+            textViewArrayList.get(i).setTag(i);
+        }
     }
 
     private void createArrayLists() {

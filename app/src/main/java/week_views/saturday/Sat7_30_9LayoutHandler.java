@@ -20,12 +20,15 @@ public class Sat7_30_9LayoutHandler extends LayoutHandler {
         time = (TextView) layout.findViewById(R.id.saturday_7_30_9);
         left = (ImageButton) layout.findViewById(R.id.sat_7_30_9_left_button);
         right = (ImageButton) layout.findViewById(R.id.sat_7_30_9_right_button);
-        if (courseList == null|| courseList.size() == 0 || courseList.size() == 1) {
+        remove = (ImageButton) layout.findViewById(R.id.sat_7_30_9_delete_button);
+        if (courseList == null|| courseList.size() == 0) {
             right.setVisibility(View.INVISIBLE);
             left.setVisibility(View.INVISIBLE);
+            remove.setVisibility(View.INVISIBLE);
         }
         if(courseList.size() > 0) {
             setTextForCourseNameAtFirst();
+            setOnClickForButtons(0);
         }
 
     }
