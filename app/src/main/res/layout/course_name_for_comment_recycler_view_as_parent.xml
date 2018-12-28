@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:orientation="horizontal"
+    android:background="@drawable/back_of_parent_item_in_recycler_view">
+    <ImageView
+        android:id="@+id/course_icon_id"
+        android:src="@drawable/coourse_icon"
+        android:padding="8dp"
+        android:layout_width="0dp"
+        android:layout_weight=".20"
+        android:layout_height="match_parent" />
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight=".60"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/course_name_comment_parent_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="هوش مصنوعی"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/open_child_id"
+        android:layout_width="0dp"
+        android:layout_weight=".20"
+        android:padding="8dp"
+        android:background="@drawable/back_of_parent_item_in_recycler_view"
+        android:src="@drawable/open_child_icon"
+        android:layout_height="match_parent" />
+</LinearLayout>

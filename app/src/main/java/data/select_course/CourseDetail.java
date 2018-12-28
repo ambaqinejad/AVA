@@ -1,12 +1,11 @@
-package data;
+package data.select_course;
 
-import java.io.Serializable;
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.ArrayList;
-import java.util.Objects;
 
-public class CourseDetailSerializable implements Serializable{
-
-    private static final long serialVersionUID = 1L;
+public class CourseDetail implements Parcelable {
     private String classId;
     private String examTime;
     private String examDay;
@@ -22,6 +21,65 @@ public class CourseDetailSerializable implements Serializable{
     private String unitNumber;
     private String havePreCourse;
     private String havePeriCourse;
+
+    public CourseDetail() {
+
+    }
+
+    protected CourseDetail(Parcel in) {
+        this.classId = in.readString();
+        this.examTime = in.readString();
+        this.examDay = in.readString();
+        this.courseTime = in.readString();
+        this.courseDays = new ArrayList<>();
+        this.courseDays = in.readArrayList(String.class.getClassLoader());
+        this.capacity = in.readString();
+        this.semester = in.readString();
+        this.teacherId = in.readString();
+        this.teacherName = in.readString();
+        this.courseId = in.readString();
+        this.courseName = in.readString();
+        this.unitNumber = in.readString();
+        this.havePreCourse = in.readString();
+        this.havePeriCourse = in.readString();
+        this.registered = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(classId);
+        dest.writeString(examTime);
+        dest.writeString(examDay);
+        dest.writeString(courseTime);
+        dest.writeStringList(courseDays);
+        dest.writeString(capacity);
+        dest.writeString(semester);
+        dest.writeString(teacherId);
+        dest.writeString(teacherName);
+        dest.writeString(courseId);
+        dest.writeString(courseName);
+        dest.writeString(unitNumber);
+        dest.writeString(havePreCourse);
+        dest.writeString(havePeriCourse);
+    }
+
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<CourseDetail> CREATOR = new Creator<CourseDetail>() {
+        @Override
+        public CourseDetail createFromParcel(Parcel in) {
+            return new CourseDetail(in);
+        }
+
+        @Override
+        public CourseDetail[] newArray(int size) {
+            return new CourseDetail[size];
+        }
+    };
 
     public String getClassId() {
         return classId;
@@ -60,6 +118,7 @@ public class CourseDetailSerializable implements Serializable{
     }
 
     public void setCourseDays(ArrayList<String> courseDays) {
+        this.courseDays = new ArrayList<>();
         this.courseDays = courseDays;
     }
 
@@ -69,14 +128,6 @@ public class CourseDetailSerializable implements Serializable{
 
     public void setCapacity(String capacity) {
         this.capacity = capacity;
-    }
-
-    public String getRegistered() {
-        return registered;
-    }
-
-    public void setRegistered(String registered) {
-        this.registered = registered;
     }
 
     public String getSemester() {
@@ -143,31 +194,11 @@ public class CourseDetailSerializable implements Serializable{
         this.havePeriCourse = havePeriCourse;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        CourseDetailSerializable that = (CourseDetailSerializable) o;
-        return classId.equalsIgnoreCase(that.classId) &&
-                examTime.equalsIgnoreCase(that.examTime) &&
-                examDay.equalsIgnoreCase(that.examDay) &&
-                courseTime.equalsIgnoreCase(that.courseTime) &&
-                courseDays.equals(that.courseDays) &&
-                capacity.equalsIgnoreCase(that.capacity) &&
-                registered.equalsIgnoreCase(that.registered) &&
-                semester.equalsIgnoreCase(that.semester) &&
-                teacherId.equalsIgnoreCase(that.teacherId) &&
-                teacherName.equalsIgnoreCase(that.teacherName) &&
-                courseId.equalsIgnoreCase(that.courseId) &&
-                courseName.equalsIgnoreCase(that.courseName) &&
-                unitNumber.equalsIgnoreCase(that.unitNumber) &&
-                havePreCourse.equalsIgnoreCase(that.havePreCourse) &&
-                havePeriCourse.equalsIgnoreCase(that.havePeriCourse);
+    public String getRegistered() {
+        return registered;
     }
 
-    @Override
-    public int hashCode() {
-
-        return Objects.hash(classId, examTime, examDay, courseTime, courseDays, capacity, registered, semester, teacherId, teacherName, courseId, courseName, unitNumber, havePreCourse, havePeriCourse);
+    public void setRegistered(String registered) {
+        this.registered = registered;
     }
 }

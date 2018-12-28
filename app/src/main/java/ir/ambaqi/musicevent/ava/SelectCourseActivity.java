@@ -25,13 +25,12 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 import Interfaces.ComponentMethod;
-import data.CourseDetail;
-import data.CourseDetailSerializable;
-import data.CourseForRecyclerView;
-import data.UrlClass;
-import recyclerview_handler.ChildAdapter;
-import recyclerview_handler.ClassesHashMap;
-import recyclerview_handler.ParentViewHolder;
+import data.select_course.CourseDetail;
+import data.select_course.CourseDetailSerializable;
+import data.select_course.CourseForRecyclerView;
+import data.url.UrlClass;
+import select_course_recycler_view_handler.ChildAdapter;
+import select_course_recycler_view_handler.ClassesHashMap;
 
 public class SelectCourseActivity extends AppCompatActivity implements ComponentMethod {
 

@@ -1,19 +1,16 @@
 package ir.ambaqi.musicevent.ava;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 import Interfaces.ComponentMethod;
-import data.CourseDetailSerializable;
+import data.select_course.CourseDetailSerializable;
 import week_views.CourseNameViews;
-import week_views.LayoutHandler;
 import week_views.monday.Mon10_30_12LayoutHandler;
 import week_views.monday.Mon13_30_15LayoutHandler;
 import week_views.monday.Mon15_30_17LayoutHandler;

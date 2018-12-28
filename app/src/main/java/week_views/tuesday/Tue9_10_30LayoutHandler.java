@@ -1,14 +1,13 @@
 package week_views.tuesday;
 
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import data.CourseDetailSerializable;
+import data.select_course.CourseDetailSerializable;
 import ir.ambaqi.musicevent.ava.R;
 import week_views.CourseNameViews;
 import week_views.LayoutHandler;

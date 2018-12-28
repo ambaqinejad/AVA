@@ -25,15 +25,17 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".SelectCourseActivity"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".CourseDetailActivity" />
+        <activity android:name=".ScheduleActivity" />
+        <activity android:name=".CommentActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CourseDetailActivity" />
-        <activity android:name=".ScheduleActivity"></activity>
     </application>
 
 </manifest>

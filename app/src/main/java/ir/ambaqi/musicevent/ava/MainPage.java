@@ -69,6 +69,8 @@ public class MainPage extends AppCompatActivity implements ComponentMethod {
             case R.id.select_course_menu:
                 startActivity(new Intent(MainPage.this, SelectCourseActivity.class));
                 break;
+            case R.id.comment_menu:
+                startActivity(new Intent(MainPage.this, CommentActivity.class));
             case R.id.exit_menu:
                 finish();
         }

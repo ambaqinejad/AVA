@@ -1,11 +1,10 @@
 package week_views;
 
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import data.CourseDetailSerializable;
+import data.select_course.CourseDetailSerializable;
 
 public class CourseNameViews {
     private ArrayList<TextView> textViewArrayList;

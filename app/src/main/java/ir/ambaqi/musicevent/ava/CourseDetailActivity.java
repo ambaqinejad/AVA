@@ -7,7 +7,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import Interfaces.ComponentMethod;
-import data.CourseDetailSerializable;
+import data.select_course.CourseDetailSerializable;
 
 public class CourseDetailActivity extends AppCompatActivity implements ComponentMethod {
 

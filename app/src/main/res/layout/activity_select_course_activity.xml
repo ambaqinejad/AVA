@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight=".1"
-        android:text="@string/register"
+        android:text="زمان بندی"
         android:layout_margin="15dp"
         android:id="@+id/schedule_selected_class"
         android:layout_gravity="center"

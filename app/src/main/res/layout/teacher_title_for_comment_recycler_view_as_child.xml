@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5sp"
+    android:orientation="horizontal"
+    android:background="@drawable/recycler_view_child_back"
+    android:id="@+id/teacher_name_in_child_linear_layout">
+    <ImageView
+        android:id="@+id/course_icon_id"
+        android:src="@drawable/teacher_icon"
+        android:padding="8dp"
+        android:layout_width="0dp"
+        android:layout_weight=".20"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight=".60"
+        android:layout_height="wrap_content"
+        android:id="@+id/teacher_name_in_child_text_view"
+        android:text="نام استاد: نیک انجام"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        android:padding="8dp"/>
+    <ImageView
+        android:id="@+id/open_child_id"
+        android:layout_width="0dp"
+        android:layout_weight=".20"
+        android:padding="8dp"
+        android:src="@drawable/enter_icon"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

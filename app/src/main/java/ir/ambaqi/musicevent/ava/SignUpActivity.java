@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import Interfaces.ComponentMethod;
-import data.UrlClass;
+import data.url.UrlClass;
 
 public class SignUpActivity extends AppCompatActivity implements ComponentMethod {
 
