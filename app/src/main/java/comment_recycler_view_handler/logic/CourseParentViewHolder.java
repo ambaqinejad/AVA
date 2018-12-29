@@ -1,4 +1,4 @@
-package comment_recycler_view_handler;
+package comment_recycler_view_handler.logic;
 
 import android.content.Context;
 import android.graphics.Typeface;

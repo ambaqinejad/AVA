@@ -4,7 +4,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import data.select_course.CourseDetailSerializable;
+import select_course_recycler_view_handler.data.CourseDetailSerializable;
 
 public class CourseNameViews {
     private ArrayList<TextView> textViewArrayList;

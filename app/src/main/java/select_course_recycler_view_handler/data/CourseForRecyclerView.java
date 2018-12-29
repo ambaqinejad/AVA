@@ -1,10 +1,8 @@
-package data.select_course;
+package select_course_recycler_view_handler.data;
 
 import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
 
 import java.util.List;
-
-import data.select_course.CourseDetail;
 
 public class CourseForRecyclerView extends ExpandableGroup<CourseDetail>{
 

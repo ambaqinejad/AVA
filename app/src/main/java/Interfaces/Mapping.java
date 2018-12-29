@@ -1,7 +1,7 @@
 package Interfaces;
 
-import data.select_course.CourseDetail;
-import data.select_course.CourseDetailSerializable;
+import select_course_recycler_view_handler.data.CourseDetail;
+import select_course_recycler_view_handler.data.CourseDetailSerializable;
 
 public interface Mapping {
     void copyCDPToCDP(CourseDetail courseDetail, CourseDetailSerializable courseDetailSerializable);

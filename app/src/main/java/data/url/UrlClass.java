@@ -6,5 +6,7 @@ public class UrlClass {
     public static final String getClassesURL = "http://194.5.176.9:800/api/university/getClasses";
     public static final String getPreCoursesURL = "http://194.5.176.9:800/api/university/getPreCourses/";
     public static final String getPeriCoursesURL = "http://194.5.176.9:800/api/university/getPeriCourses/";
+    public static final String getCommentURL = "http://194.5.176.9:800/api/comment/getComments";
+    public static final String setCommentURL = "http://194.5.176.9:800/api/comment/setComments";
 
 }

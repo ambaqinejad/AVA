@@ -18,9 +18,9 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import comment_recycler_view_handler.CourseTeacherChildAdapter;
-import data.comment.CourseNameForCommentRecyclerView;
-import data.comment.CourseTeacherForComment;
+import comment_recycler_view_handler.logic.CourseTeacherChildAdapter;
+import comment_recycler_view_handler.data.CourseNameForCommentRecyclerView;
+import comment_recycler_view_handler.data.CourseTeacherForComment;
 import data.url.UrlClass;
 
 public class CommentActivity extends AppCompatActivity {
@@ -30,11 +30,13 @@ public class CommentActivity extends AppCompatActivity {
     private ArrayList<CourseTeacherForComment> courseTeacherForCommentArrayList;
     private RecyclerView courseTeacherForCommentRecyclerView;
     private ArrayList<CourseNameForCommentRecyclerView> coursesNames;
+    private String stno;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comment);
+        stno = getIntent().getStringExtra("stno");
         init();
         sendRequestToServer();
     }
@@ -98,7 +100,7 @@ public class CommentActivity extends AppCompatActivity {
     }
 
     private void setUiProperties() {
-        CourseTeacherChildAdapter adapter = new CourseTeacherChildAdapter(coursesNames, CommentActivity.this);
+        CourseTeacherChildAdapter adapter = new CourseTeacherChildAdapter(coursesNames, CommentActivity.this, stno);
         courseTeacherForCommentRecyclerView.setLayoutManager(new LinearLayoutManager(CommentActivity.this));
         courseTeacherForCommentRecyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();

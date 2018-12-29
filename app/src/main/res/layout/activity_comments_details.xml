@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back_of_menus"
+    android:orientation="vertical"
+    tools:context=".SelectCourseActivity">
+
+
+    <TextView
+        android:id="@+id/courseNameInCommentDetail"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        android:layout_weight="0.05"
+        android:gravity="center"
+        android:text="نام درس: برنامه سازی پیشرفته"
+        android:textColor="#76FF03"
+        android:textSize="14dp" />
+
+    <TextView
+        android:id="@+id/teacherNameInCommentDetail"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="0.05"
+        android:gravity="center"
+        android:inputType="textMultiLine"
+        android:text="نام استاد: محمد مهدی اثنی عشری"
+        android:textColor="#76FF03"
+        android:textSize="14dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/recycler_view_border"
+        android:layout_weight=".5"
+        android:padding="20dp"
+        android:layout_margin="10dp">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/commentDetailsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        android:layout_weight=".4"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <ImageButton
+            android:id="@+id/send_image_button"
+            android:layout_width="0dp"
+            android:layout_weight=".2"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_margin="5dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/send_icon" />
+
+        <EditText
+            android:id="@+id/content_for_send"
+            android:layout_width="0dp"
+            android:layout_weight=".9"
+            android:layout_margin="5dp"
+            android:lineSpacingExtra="15dp"
+
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/white"
+            android:hint="یک پیام بنویسید!"
+            android:inputType="textCapSentences|textMultiLine"
+            android:isScrollContainer="true"
+            android:scrollbars="vertical"
+            android:maxLength="3000"
+            android:maxLines="6"
+            android:minLines="1"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black" />
+
+    </LinearLayout>
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:orientation="horizontal"-->
+    <!--android:layout_weight=".4">-->
+    <!--<ScrollView-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_margin="10dp"-->
+    <!--android:padding="5dp"-->
+    <!--android:layout_weight=".9">-->
+
+    <!--<EditText-->
+    <!--android:layout_gravity="bottom"-->
+    <!--android:background="@color/white"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:id="@+id/content_for_send"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:hint="نظر شما"-->
+    <!--android:textColorHint="@color/black"-->
+    <!--android:textColor="@color/black"-->
+    <!--android:inputType="textCapSentences|textMultiLine"-->
+    <!--android:maxLength ="2000"-->
+    <!--android:isScrollContainer="true"-->
+    <!--android:padding="5dp"-->
+    <!--android:maxLines="6"-->
+    <!--android:minLines="1"/>-->
+    <!--</ScrollView>-->
+    <!--<LinearLayout-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_margin="10dp"-->
+    <!--android:layout_weight=".1">-->
+    <!--<ImageButton-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_gravity="bottom"-->
+    <!--android:id="@+id/send_image_button"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@android:color/transparent"-->
+    <!--android:src="@android:drawable/ic_menu_send"/>-->
+    <!--</LinearLayout>-->
+
+
+    <!--</LinearLayout>-->
+
+</LinearLayout>

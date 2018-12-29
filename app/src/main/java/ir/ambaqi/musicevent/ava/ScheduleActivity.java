@@ -9,7 +9,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import Interfaces.ComponentMethod;
-import data.select_course.CourseDetailSerializable;
+import select_course_recycler_view_handler.data.CourseDetailSerializable;
 import week_views.CourseNameViews;
 import week_views.monday.Mon10_30_12LayoutHandler;
 import week_views.monday.Mon13_30_15LayoutHandler;

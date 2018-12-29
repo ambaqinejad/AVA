@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/commentDetailLayout"
+    android:layout_margin="5dp"
+    android:background="@drawable/comment_detail_border"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_margin="5dp"
+        android:id="@+id/studentFullNameInCommentDetail"
+        android:text=""
+        android:padding="5dp"
+        android:textColor="#f9c9c9"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_margin="5dp"
+        android:id="@+id/studentNumberInCommentDetail"
+        android:text=""
+        android:padding="5dp"
+        android:textColor="#9eadf1"
+        android:textSize="16sp"
+        />
+
+    <TextView
+        android:id="@+id/contentInCommentDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:lineSpacingExtra="10dp"
+        android:gravity="start"
+        android:inputType="textMultiLine"
+        android:maxLength="3000"
+        android:padding="15dp"
+        android:text=""
+        android:textColor="#46ea49"
+        android:textSize="14sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/timeInCommentDetail"
+        android:text=""
+
+        android:maxLength="3000"
+        android:padding="5dp"
+        android:textColor="#45f148"
+        android:textSize="12sp"
+        android:layout_margin="6dp"
+        />
+
+</LinearLayout>
+    <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_margin="5dp"-->
+    <!--android:background="@drawable/my_comment_detail_border"-->
+    <!--android:orientation="vertical">-->
+    <!--<TextView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:gravity="center"-->
+    <!--android:layout_margin="5dp"-->
+    <!--android:id="@+id/studentFullNameInCommentDetail"-->
+    <!--android:text=""-->
+    <!--android:padding="5dp"-->
+    <!--android:textColor="#f72020"-->
+    <!--android:textSize="20sp"-->
+    <!--/>-->
+
+    <!--<TextView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:gravity="center"-->
+    <!--android:layout_margin="5dp"-->
+    <!--android:id="@+id/studentNumberInCommentDetail"-->
+    <!--android:text=""-->
+    <!--android:padding="5dp"-->
+    <!--android:textColor="#163ef1"-->
+    <!--android:textSize="16sp"-->
+    <!--/>-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/contentInCommentDetail"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:lineSpacingExtra="10dp"-->
+    <!--android:gravity="start"-->
+    <!--android:inputType="textMultiLine"-->
+    <!--android:maxLength="3000"-->
+    <!--android:padding="15dp"-->
+    <!--android:text=""-->
+    <!--android:textColor="#00e904"-->
+    <!--android:textSize="14sp" />-->
+
+    <!--<TextView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:gravity="center"-->
+    <!--android:id="@+id/timeInCommentDetail"-->
+    <!--android:text=""-->
+    <!--android:maxLength="3000"-->
+    <!--android:padding="5dp"-->
+    <!--android:textColor="#00f104"-->
+    <!--android:textSize="12sp"-->
+    <!--android:layout_margin="3dp"-->
+    <!--/>-->
+
+    <!--</LinearLayout>-->

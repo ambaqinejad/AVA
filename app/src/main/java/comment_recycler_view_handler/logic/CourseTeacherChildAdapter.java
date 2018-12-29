@@ -1,4 +1,4 @@
-package comment_recycler_view_handler;
+package comment_recycler_view_handler.logic;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,17 +10,19 @@ import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
 
 import java.util.List;
 
-import data.comment.CourseNameForCommentRecyclerView;
-import data.comment.CourseTeacherForComment;
+import comment_recycler_view_handler.data.CourseNameForCommentRecyclerView;
+import comment_recycler_view_handler.data.CourseTeacherForComment;
 import ir.ambaqi.musicevent.ava.R;
 
 public class CourseTeacherChildAdapter extends ExpandableRecyclerViewAdapter<CourseParentViewHolder, TeacherChildViewHolder> {
 
 
+    private String stno;
     private Context context;
-    public CourseTeacherChildAdapter(List<? extends ExpandableGroup> groups, Context context) {
+    public CourseTeacherChildAdapter(List<? extends ExpandableGroup> groups, Context context, String stno) {
         super(groups);
         this.context = context;
+        this.stno = stno;
     }
 
     @Override
@@ -41,7 +43,7 @@ public class CourseTeacherChildAdapter extends ExpandableRecyclerViewAdapter<Cou
     @Override
     public void onBindChildViewHolder(TeacherChildViewHolder holder, int flatPosition, ExpandableGroup group, int childIndex) {
         CourseTeacherForComment courseTeacherForComment = (CourseTeacherForComment) group.getItems().get(childIndex);
-        holder.bind(courseTeacherForComment, context);
+        holder.bind(courseTeacherForComment, context, stno);
     }
 
     @Override

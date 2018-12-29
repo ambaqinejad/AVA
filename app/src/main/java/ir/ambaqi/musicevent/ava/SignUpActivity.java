@@ -19,6 +19,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -146,8 +148,9 @@ public class SignUpActivity extends AppCompatActivity implements ComponentMethod
                     @Override
                     public void onResponse(String response) {
                         if (response.equals("\"You are signed up successfully\"")) {
-                            startActivity(new Intent(SignUpActivity.this, MainPage.class));
-                            finish();
+                            Intent intent = new Intent(SignUpActivity.this, MainPage.class);
+                            intent.putExtra("stno", stnoSignUp.getText().toString());
+                            startActivity(intent);finish();
                         } else if (response.equals("\"The student number or id number is used by other user!\"")) {
                             Toast.makeText(SignUpActivity.this,
                                     "کد ملی یا شماره دانشجویی از قبل وجود دارد.", Toast.LENGTH_LONG).show();
@@ -168,12 +171,16 @@ public class SignUpActivity extends AppCompatActivity implements ComponentMethod
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> signUpData = new HashMap<>();
-                signUpData.put("firstName", nameSignUp.getText().toString());
-                signUpData.put("lastName", familySignUp.getText().toString());
-                signUpData.put("student_number", stnoSignUp.getText().toString());
-                signUpData.put("id_number", nationalIdSignUp.getText().toString());
-                signUpData.put("entery_year", entryYearSignUp.getText().toString());
-                signUpData.put("average", averageSignUp.getText().toString());
+                try {
+                    signUpData.put("lastName", URLEncoder.encode(familySignUp.getText().toString(),"utf-8"));
+                    signUpData.put("student_number", URLEncoder.encode(stnoSignUp.getText().toString(),"utf-8"));
+                    signUpData.put("id_number", URLEncoder.encode(nationalIdSignUp.getText().toString(),"utf-8"));
+                    signUpData.put("entery_year", URLEncoder.encode(entryYearSignUp.getText().toString(),"utf-8"));
+                    signUpData.put("average", URLEncoder.encode(averageSignUp.getText().toString(),"utf-8"));
+                    signUpData.put("firstName", URLEncoder.encode(nameSignUp.getText().toString(),"utf-8"));
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
                 return signUpData;
             }
         };

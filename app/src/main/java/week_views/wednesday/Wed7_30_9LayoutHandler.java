@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import data.select_course.CourseDetailSerializable;
+import select_course_recycler_view_handler.data.CourseDetailSerializable;
 import ir.ambaqi.musicevent.ava.R;
 import week_views.CourseNameViews;
 import week_views.LayoutHandler;

@@ -93,7 +93,9 @@ public class LoginActivity extends AppCompatActivity implements ComponentMethod 
                     @Override
                     public void onResponse(String response) {
                         if (response.equals("\"You are loged in successfully\"")) {
-                            startActivity(new Intent(LoginActivity.this, MainPage.class));
+                            Intent intent = new Intent(LoginActivity.this, MainPage.class);
+                            intent.putExtra("stno", loginStno.getText().toString());
+                            startActivity(intent);
                             finish();
                         } else {
                             Toast.makeText(LoginActivity.this,

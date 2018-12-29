@@ -1,4 +1,4 @@
-package data.select_course;
+package select_course_recycler_view_handler.data;
 
 import android.os.Parcel;
 import android.os.Parcelable;

@@ -1,4 +1,4 @@
-package data.comment;
+package comment_recycler_view_handler.data;
 
 import android.os.Parcel;
 import android.os.Parcelable;

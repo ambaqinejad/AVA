@@ -18,11 +18,13 @@ public class MainPage extends AppCompatActivity implements ComponentMethod {
     RelativeLayout updateInformationMenu, checkSituationMenu, exitMenu;
     TextView toolbarText, selectCourseText, myPlansText, commentText;
     TextView updateInformationText, checkSituationText, exitText;
+    private String stno;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
+        stno = getIntent().getStringExtra("stno");
         init();
     }
 
@@ -70,7 +72,9 @@ public class MainPage extends AppCompatActivity implements ComponentMethod {
                 startActivity(new Intent(MainPage.this, SelectCourseActivity.class));
                 break;
             case R.id.comment_menu:
-                startActivity(new Intent(MainPage.this, CommentActivity.class));
+                Intent intent = new Intent(MainPage.this, CommentActivity.class);
+                intent.putExtra("stno", stno);
+                startActivity(intent);
             case R.id.exit_menu:
                 finish();
         }

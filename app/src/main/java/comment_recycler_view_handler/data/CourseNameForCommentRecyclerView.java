@@ -1,10 +1,8 @@
-package data.comment;
+package comment_recycler_view_handler.data;
 
 import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
 
 import java.util.List;
-
-import data.comment.CourseTeacherForComment;
 
 public class CourseNameForCommentRecyclerView extends ExpandableGroup<CourseTeacherForComment> {
 
