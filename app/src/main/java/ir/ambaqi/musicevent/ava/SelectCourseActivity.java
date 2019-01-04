@@ -41,11 +41,13 @@ public class SelectCourseActivity extends AppCompatActivity implements Component
     private ArrayList<CourseForRecyclerView> courses;
     public HashMap<String, CourseDetailSerializable> selectedClasses;
     private Button scheduleButton;
+    private String stno;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_course_activity);
+        stno = getIntent().getStringExtra("stno");
         init();
         sendRequestToServer();
     }
@@ -73,21 +75,13 @@ public class SelectCourseActivity extends AppCompatActivity implements Component
 
     private void sendRequestToServer() {
         JsonArrayRequest request = new JsonArrayRequest(GET_CLASSES_URL,
-                new Response.Listener<JSONArray>() {
-                    @Override
-                    public void onResponse(JSONArray response) {
-                        parseData(response);
-                        fillCourses(courseDetails,courses);
-                        setUiProperties();
-                    }
+                response -> {
+                    parseData(response);
+                    fillCourses(courseDetails,courses);
+                    setUiProperties();
                 },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(SelectCourseActivity.this, "عدم برقرای ارتباط با سرور",
-                                Toast.LENGTH_LONG).show();
-                    }
-                }
+                error -> Toast.makeText(SelectCourseActivity.this, "عدم برقرای ارتباط با سرور",
+                        Toast.LENGTH_LONG).show()
         );
         queue.add(request);
     }
@@ -160,16 +154,14 @@ public class SelectCourseActivity extends AppCompatActivity implements Component
         selectCourseRecyclerView.setLayoutManager(new LinearLayoutManager(SelectCourseActivity.this));
         selectCourseRecyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
-        scheduleButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                selectedClasses = ClassesHashMap.selectedClasses;
-                ArrayList<CourseDetailSerializable> selectedClassesList = new ArrayList<>();
-                mapSCHMToSCAL(selectedClasses, selectedClassesList);
-                Intent i = new Intent(SelectCourseActivity.this, ScheduleActivity.class);
-                i.putExtra("selectedClasses", selectedClassesList);
-                startActivity(i);
-            }
+        scheduleButton.setOnClickListener(v -> {
+            selectedClasses = ClassesHashMap.selectedClasses;
+            ArrayList<CourseDetailSerializable> selectedClassesList = new ArrayList<>();
+            mapSCHMToSCAL(selectedClasses, selectedClassesList);
+            Intent i = new Intent(SelectCourseActivity.this, ScheduleActivity.class);
+            i.putExtra("selectedClasses", selectedClassesList);
+            i.putExtra("stno", stno);
+            startActivity(i);
         });
     }
 

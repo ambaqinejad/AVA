@@ -19,7 +19,7 @@ import ir.ambaqi.musicevent.ava.R;
 
 public class RowCommentAdapter extends RecyclerView.Adapter<RowCommentViewHolder> {
 
-    private ArrayList<RowCommentDetail> rowCommentDetailArrayList = new ArrayList<>();
+    private ArrayList<RowCommentDetail> rowCommentDetailArrayList;
     private Context context;
     private String stno;
 
@@ -34,6 +34,7 @@ public class RowCommentAdapter extends RecyclerView.Adapter<RowCommentViewHolder
     public RowCommentViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rows_in_comment_detail,
                 parent, false);
+        //parent.removeView(view);
         return new RowCommentViewHolder(view, context);
     }
 

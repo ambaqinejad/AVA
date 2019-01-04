@@ -144,29 +144,23 @@ public class SignUpActivity extends AppCompatActivity implements ComponentMethod
     private void sendSignUpDataToServer() {
         StringRequest signUpRequest = new StringRequest(Request.Method.POST,
                 SIGN_UP_URL,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        if (response.equals("\"You are signed up successfully\"")) {
-                            Intent intent = new Intent(SignUpActivity.this, MainPage.class);
-                            intent.putExtra("stno", stnoSignUp.getText().toString());
-                            startActivity(intent);finish();
-                        } else if (response.equals("\"The student number or id number is used by other user!\"")) {
-                            Toast.makeText(SignUpActivity.this,
-                                    "کد ملی یا شماره دانشجویی از قبل وجود دارد.", Toast.LENGTH_LONG).show();
-                            changeVisibility(true);
-                        } else {
+                response -> {
+                    if (response.equals("\"You are signed up successfully\"")) {
+                        Intent intent = new Intent(SignUpActivity.this, MainPage.class);
+                        intent.putExtra("stno", stnoSignUp.getText().toString());
+                        startActivity(intent);finish();
+                    } else if (response.equals("\"The student number or id number is used by other user!\"")) {
+                        Toast.makeText(SignUpActivity.this,
+                                "کد ملی یا شماره دانشجویی از قبل وجود دارد.", Toast.LENGTH_LONG).show();
+                        changeVisibility(true);
+                    } else {
 
-                        }
                     }
                 },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(SignUpActivity.this,
-                                "اتصال برقرار نشد.", Toast.LENGTH_LONG).show();
-                        changeVisibility(true);
-                    }
+                error -> {
+                    Toast.makeText(SignUpActivity.this,
+                            "اتصال برقرار نشد.", Toast.LENGTH_LONG).show();
+                    changeVisibility(true);
                 }) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {

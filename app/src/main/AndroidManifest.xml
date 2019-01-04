@@ -20,7 +20,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".SignUpActivity"
@@ -30,12 +29,26 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".SelectCourseActivity"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".CourseDetailActivity" />
-        <activity android:name=".ScheduleActivity" />
-        <activity android:name=".CommentActivity">
-        </activity>
-        <activity android:name=".CommentsDetails"></activity>
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CourseDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ScheduleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CommentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CommentsDetails"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MyPlansActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PlanDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".UpdateActivity"></activity>
     </application>
 
 </manifest>

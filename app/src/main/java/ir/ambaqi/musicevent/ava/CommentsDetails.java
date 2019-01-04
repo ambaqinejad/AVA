@@ -109,27 +109,19 @@ public class CommentsDetails extends AppCompatActivity implements ComponentMetho
     private void sendRequestToServer(final String courseId, final String teacherId) {
         StringRequest getCommentRequest = new StringRequest(Request.Method.POST,
                 Get_COMMENT_URL,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONArray responseArray = new JSONArray(response);
-                            parseData(responseArray);
-                            setUiProperty();
-                        } catch (JSONException e) {
-                            Toast.makeText(CommentsDetails.this,
-                                    "خطا در نحوه ی دریافت اطلاعات",
-                                    Toast.LENGTH_LONG).show();
-                        }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(CommentsDetails.this, "عدم برقراری ارتباط با سرور",
+                response -> {
+                    try {
+                        JSONArray responseArray = new JSONArray(response);
+                        parseData(responseArray);
+                        setUiProperty();
+                    } catch (JSONException e) {
+                        Toast.makeText(CommentsDetails.this,
+                                "خطا در نحوه ی دریافت اطلاعات",
                                 Toast.LENGTH_LONG).show();
                     }
-                }) {
+                },
+                error -> Toast.makeText(CommentsDetails.this, "عدم برقراری ارتباط با سرور",
+                        Toast.LENGTH_LONG).show()) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 HashMap<String, String> getCommentData = new HashMap<>();
@@ -176,26 +168,18 @@ public class CommentsDetails extends AppCompatActivity implements ComponentMetho
 
     private void sendCommentToServer(final String comment) {
         StringRequest request = new StringRequest(Request.Method.POST, Set_COMMENT_URL
-                , new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                if (response.equalsIgnoreCase("\"The comment is saved successfuly\"")) {
-                    sendRequestToServer(courseId, teacherId);
-                    contentForSend.setText("");
-                    Toast.makeText(CommentsDetails.this,
-                            "نظر شما با موفقیت ثبت شد", Toast.LENGTH_LONG).show();
-                } else {
-
-                }
-            }
-        },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
+                , response -> {
+                    if (response.equalsIgnoreCase("\"The comment is saved successfuly\"")) {
+                        sendRequestToServer(courseId, teacherId);
+                        contentForSend.setText("");
                         Toast.makeText(CommentsDetails.this,
-                                "اتصال برقرار نشد.", Toast.LENGTH_LONG).show();
+                                "نظر شما با موفقیت ثبت شد", Toast.LENGTH_LONG).show();
+                    } else {
+
                     }
-                }) {
+                },
+                error -> Toast.makeText(CommentsDetails.this,
+                        "اتصال برقرار نشد.", Toast.LENGTH_LONG).show()) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
 

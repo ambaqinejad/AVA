@@ -1,5 +1,6 @@
 package ir.ambaqi.musicevent.ava;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -50,21 +51,13 @@ public class CommentActivity extends AppCompatActivity {
 
     private void sendRequestToServer() {
         JsonArrayRequest request = new JsonArrayRequest(GET_CLASSES_URL,
-                new Response.Listener<JSONArray>() {
-                    @Override
-                    public void onResponse(JSONArray response) {
-                        parsData(response);
-                        fillCoursesNames();
-                        setUiProperties();
-                    }
+                response -> {
+                    parsData(response);
+                    fillCoursesNames();
+                    setUiProperties();
                 },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(CommentActivity.this, "عدم برقرای ارتباط با سرور",
-                                Toast.LENGTH_LONG).show();
-                    }
-                }
+                error -> Toast.makeText(CommentActivity.this, "عدم برقرای ارتباط با سرور",
+                        Toast.LENGTH_LONG).show()
         );
         queue.add(request);
     }
@@ -105,4 +98,6 @@ public class CommentActivity extends AppCompatActivity {
         courseTeacherForCommentRecyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
     }
+
+
 }

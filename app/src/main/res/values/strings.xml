@@ -26,4 +26,9 @@
     <string name="monday_title_text">دوشنبه</string>
     <string name="tuesday_title_text">سه شنبه</string>
     <string name="wednesday_title_text">چهار شنبه</string>
+    <string name="you_already_register">شما قبلا ثبت برنامه کرده اید برای جایگزینی از گزینه ارسال جایگزین استفاده کنید</string>
+    <string name="register_successfully">این برنامه با موفقیت برای شما ثبت شد</string>
+    <string name="planIsNotFound">شما چنین برنامه ای ندارید</string>
+    <string name="updateRegSuccessfully">برنامه جدید با موفقیت برای شما ثبت شد</string>
+    <string name="alreadyRegThisPlan">شما قبلا این برنامه را ثبت کرده اید</string>
 </resources>

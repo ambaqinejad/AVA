@@ -17,11 +17,11 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <include layout="@layout/saturday_layout"/>
-            <include layout="@layout/sunday_layout"/>
-            <include layout="@layout/monday_layout"/>
-            <include layout="@layout/tuesday_layout"/>
-            <include layout="@layout/wednesday_layout"/>
+            <include layout="@layout/saturday_layoutp"/>
+            <include layout="@layout/sunday_layoutp"/>
+            <include layout="@layout/monday_layoutp"/>
+            <include layout="@layout/tuesday_layoutp"/>
+            <include layout="@layout/wednesday_layoutp"/>
 
         </LinearLayout>
 
@@ -29,10 +29,10 @@
     </ScrollView>
     <Button
         android:layout_width="match_parent"
-        android:id="@+id/saveInMyPlansButton"
-        android:padding="5dp"
-        android:text="ذخیره در برنامه های من"
-        android:background="#b82048"
+        android:id="@+id/sendPlanToServer"
+        android:padding="2dp"
+        android:text="ارسال برنامه به سرور"
+        android:background="#06012b"
         android:layout_margin="5dp"
         android:textSize="16sp"
         android:textColor="@color/white"
@@ -40,10 +40,10 @@
         android:layout_weight=".1"/>
     <Button
         android:layout_width="match_parent"
-        android:id="@+id/goToMyPlansButton"
-        android:padding="5dp"
-        android:text="برنامه های من جهت ارسال"
-        android:background="#b82048"
+        android:id="@+id/sendAlternativePlanToServer"
+        android:padding="2dp"
+        android:text="ارسال به عنوان برنامه جایگزین"
+        android:background="#06012b"
         android:layout_margin="5dp"
         android:textSize="16sp"
         android:textColor="@color/white"

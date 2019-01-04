@@ -4,32 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUpActivity">
+    tools:context=".UpdateActivity">
     <ImageView
-        android:id="@+id/sign_up_back"
+        android:id="@+id/update_info_back"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:src="@drawable/background" />
 
-    <TextView
-        android:id="@+id/necessaryMessage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"
-        android:text="فیلد های ستاره دار اجباری می باشند."
-        android:textColor="#8b1716"
-        android:textSize="12sp"
-        android:textStyle="bold" />
 
-    <ProgressBar
-        android:id="@+id/progress_bar_sign_up"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:visibility="invisible" />
+    <!--<ProgressBar-->
+        <!--android:id="@+id/progress_bar_update"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:visibility="invisible" />-->
 
 
     <RelativeLayout
@@ -42,7 +31,7 @@
 
 
         <LinearLayout
-            android:id="@+id/sign_up_widget_linear_layout"
+            android:id="@+id/update_widget_linear_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -54,21 +43,32 @@
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.05"
-                    android:text=""
-                    android:textColor="#ef0a0a"
-                    android:textSize="20sp" />
 
-                <EditText
-                    android:id="@+id/sign_up_name"
-                    android:layout_width="0dp"
+                <TextView
+                    android:id="@+id/update_name"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.95"
                     android:background="@drawable/edit_text_container"
-                    android:hint="@string/name"
+
+                    android:paddingBottom="10dp"
+                    android:paddingEnd="20dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingStart="20dp"
+                    android:paddingTop="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/update_family"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_text_container"
+
                     android:inputType="text"
                     android:paddingBottom="10dp"
                     android:paddingEnd="20dp"
@@ -85,21 +85,32 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:id="@+id/update_stno"
+                    android:inputType="numberDecimal"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.05"
-                    android:text=""
-                    android:textColor="#ef0a0a"
-                    android:textSize="20sp" />
-
-                <EditText
-                    android:id="@+id/sign_up_family"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.95"
                     android:background="@drawable/edit_text_container"
-                    android:hint="@string/family"
-                    android:inputType="text"
+                    android:paddingBottom="10dp"
+                    android:paddingEnd="20dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingStart="20dp"
+                    android:paddingTop="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/update_national_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_text_container"
+
                     android:paddingBottom="10dp"
                     android:paddingEnd="20dp"
                     android:paddingLeft="20dp"
@@ -115,21 +126,12 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.05"
-                    android:text="*"
-                    android:textColor="#ef0a0a"
-                    android:textSize="20sp" />
-
-                <EditText
-                    android:id="@+id/sign_up_stno"
+                    android:id="@+id/update_major"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.95"
                     android:background="@drawable/edit_text_container"
-                    android:hint="@string/stno_sign_up"
-                    android:inputType="number"
+
                     android:paddingBottom="10dp"
                     android:paddingEnd="20dp"
                     android:paddingLeft="20dp"
@@ -145,21 +147,11 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:id="@+id/update_entry_year"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.05"
-                    android:text="*"
-                    android:textColor="#ef0a0a"
-                    android:textSize="20sp" />
-
-                <EditText
-                    android:id="@+id/sign_up_national_id"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.95"
                     android:background="@drawable/edit_text_container"
-                    android:hint="@string/national_id_sign_up"
-                    android:inputType="numberPassword"
+
                     android:paddingBottom="10dp"
                     android:paddingEnd="20dp"
                     android:paddingLeft="20dp"
@@ -173,80 +165,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.05"
-                    android:text=""
-                    android:textColor="#ef0a0a"
-                    android:textSize="20sp" />
-
                 <EditText
-                    android:id="@+id/sign_up_major"
-                    android:layout_width="0dp"
+                    android:id="@+id/update_average"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.95"
-                    android:background="@drawable/edit_text_container"
-                    android:hint="@string/major"
-                    android:inputType="text"
-                    android:paddingBottom="10dp"
-                    android:paddingEnd="20dp"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
-                    android:paddingStart="20dp"
-                    android:paddingTop="10dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.05"
-                    android:text="*"
-                    android:textColor="#ef0a0a"
-                    android:textSize="20sp" />
-
-                <EditText
-                    android:id="@+id/sign_up_entry_year"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.95"
-                    android:background="@drawable/edit_text_container"
-                    android:hint="@string/entry_year_sign_up"
-                    android:inputType="number"
-                    android:paddingBottom="10dp"
-                    android:paddingEnd="20dp"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
-                    android:paddingStart="20dp"
-                    android:paddingTop="10dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.05"
-                    android:text="*"
-                    android:textColor="#ef0a0a"
-                    android:textSize="20sp" />
-
-                <EditText
-                    android:id="@+id/sign_up_average"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.95"
                     android:background="@drawable/edit_text_container"
                     android:hint="@string/average_sign_up"
                     android:inputType="text"
@@ -259,17 +181,16 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/register_sign_up"
+                android:id="@+id/register_update"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/register_btn"
-                android:onClick="signUpBtnClick"
-                android:text="@string/register"
+                android:text="اصلاح"
                 android:textColor="@color/white"
-                android:textSize="20sp" />
+            android:textSize="20sp" />
         </LinearLayout>
 
     </RelativeLayout>

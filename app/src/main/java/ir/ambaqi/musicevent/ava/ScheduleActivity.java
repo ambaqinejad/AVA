@@ -3,12 +3,30 @@ package ir.ambaqi.musicevent.ava;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import java.io.UnsupportedEncodingException;
+import java.lang.reflect.Method;
+import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 import Interfaces.ComponentMethod;
+import data.url.UrlClass;
 import select_course_recycler_view_handler.data.CourseDetailSerializable;
 import week_views.CourseNameViews;
 import week_views.monday.Mon10_30_12LayoutHandler;
@@ -54,6 +72,10 @@ public class ScheduleActivity extends AppCompatActivity implements ComponentMeth
     private ArrayList<CourseDetailSerializable> courseWed7_30_9, courseWed9_10_30, courseWed10_30_12, courseWed13_30_15, courseWed15_30_17;
     private ArrayList<ArrayList<CourseDetailSerializable>> listOfCourseLists;
     private CourseNameViews courseNameViews;
+    private Button saveInMyPlansButton, goToMyPlansButton;
+    private ArrayList<CourseDetailSerializable> favouriteClassesList;
+    private String stno;
+    private RequestQueue queue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,11 +83,20 @@ public class ScheduleActivity extends AppCompatActivity implements ComponentMeth
         setContentView(R.layout.activity_schedule);
         Intent i = getIntent();
         selectedClasses = (ArrayList<CourseDetailSerializable>) i.getSerializableExtra("selectedClasses");
+        stno = i.getStringExtra("stno");
         init();
     }
 
     @Override
     public void init() {
+        saveInMyPlansButton = (Button) findViewById(R.id.saveInMyPlansButton);
+        goToMyPlansButton = (Button) findViewById(R.id.goToMyPlansButton);
+        saveInMyPlansButton.setOnClickListener(v -> savingInMyPlans());
+        goToMyPlansButton.setOnClickListener(v -> {
+            Intent intent = new Intent(ScheduleActivity.this, MyPlansActivity.class);
+            intent.putExtra("stno", stno);
+            startActivity(intent);
+        });
         initLayout();
         initCourseName();
         setTextViewArrayList();
@@ -74,6 +105,7 @@ public class ScheduleActivity extends AppCompatActivity implements ComponentMeth
         setListOfCourseLists();
         initCourseNameViews();
         initLayoutHandler();
+        queue = Volley.newRequestQueue(ScheduleActivity.this);
     }
 
     private void initLayout() {
@@ -142,7 +174,7 @@ public class ScheduleActivity extends AppCompatActivity implements ComponentMeth
     }
 
     private void setTextViewTags() {
-        for(int i = 0; i < textViewArrayList.size(); i++) {
+        for (int i = 0; i < textViewArrayList.size(); i++) {
             textViewArrayList.get(i).setTag(i);
         }
     }
@@ -356,5 +388,131 @@ public class ScheduleActivity extends AppCompatActivity implements ComponentMeth
     @Override
     public void setTypeFaceToComponent() {
 
+    }
+
+    private void savingInMyPlans() {
+        HashMap<String, CourseDetailSerializable> favouriteClasses = new HashMap<>();
+        for (int i = 0; i < textViewArrayList.size(); i++) {
+            String courseNameAndClassId = textViewArrayList.get(i).getText().toString();
+            if (!courseNameAndClassId.equalsIgnoreCase("")) {
+                Loop:
+                for (int j = i; j < listOfCourseLists.size(); j++) {
+                    for (int k = 0; k < listOfCourseLists.get(j).size(); k++) {
+                        StringBuffer sb = new StringBuffer();
+                        sb.append(listOfCourseLists.get(j).get(k).getCourseName());
+                        sb.append("\n");
+                        sb.append("کد کلاس:");
+                        sb.append(listOfCourseLists.get(j).get(k).getClassId());
+                        String s = sb.toString();
+                        if (s.equalsIgnoreCase(courseNameAndClassId)) {
+                            favouriteClasses.put(s, listOfCourseLists.get(j).get(k));
+                            break Loop;
+                        }
+                    }
+                }
+            }
+        }
+        changeToList(favouriteClasses);
+        boolean okSameClass = checkSeveralSameClasses();
+        if (okSameClass) {
+            boolean okDateAndTime = checkDateAndTime();
+            if (okDateAndTime) {
+                int unitNumber = sumOfUnitNumber();
+                if (unitNumber >= 12 && unitNumber <= 24) {
+                    saveMyPlanInServer();
+                } else {
+                    Toast.makeText(ScheduleActivity.this, "تعداد واحد شما در بازه مورد نظر نیست",
+                            Toast.LENGTH_LONG).show();
+                }
+            }
+        }
+    }
+
+    private void changeToList(HashMap<String, CourseDetailSerializable> favouriteClasses) {
+        Iterator<String> iterator = favouriteClasses.keySet().iterator();
+        favouriteClassesList = new ArrayList<>();
+        while (iterator.hasNext()) {
+            favouriteClassesList.add(favouriteClasses.get(iterator.next()));
+        }
+    }
+
+    private boolean checkSeveralSameClasses() {
+        boolean ok = true;
+        Loop:
+        for (int i = 0; i < favouriteClassesList.size(); i++) {
+            for (int j = i + 1; j < favouriteClassesList.size(); j++) {
+                if (favouriteClassesList.get(i).getCourseName().equalsIgnoreCase(
+                        favouriteClassesList.get(j).getCourseName()
+                )) {
+                    ok = false;
+                    Toast.makeText(ScheduleActivity.this, "شما درس " +
+                                    favouriteClassesList.get(i).getCourseName() + " را چندین بار انتخاب کرده اید!",
+                            Toast.LENGTH_LONG).show();
+                    break Loop;
+                }
+            }
+        }
+        return ok;
+    }
+
+    private boolean checkDateAndTime() {
+        boolean ok = true;
+        Loop:
+        for (int i = 0; i < favouriteClassesList.size(); i++) {
+            for (int j = i + 1; j < favouriteClassesList.size(); j++) {
+                if (favouriteClassesList.get(i).getExamDay().equalsIgnoreCase(
+                        favouriteClassesList.get(j).getExamDay()) &&
+                        favouriteClassesList.get(i).getExamTime().equalsIgnoreCase(
+                                favouriteClassesList.get(j).getExamTime()
+                        )) {
+                    ok = false;
+                    Toast.makeText(ScheduleActivity.this, favouriteClassesList.get(i).getCourseName() + " و " +
+                                    favouriteClassesList.get(j).getCourseName() + " در یک زمان امتحان دارند",
+                            Toast.LENGTH_LONG).show();
+                    break Loop;
+                }
+            }
+        }
+        return ok;
+    }
+
+    private int sumOfUnitNumber() {
+        int sum = 0;
+        for (int i = 0; i < favouriteClassesList.size(); i++) {
+            sum += Integer.parseInt(favouriteClassesList.get(i).getUnitNumber());
+        }
+        //Toast.makeText(ScheduleActivity.this, sum+"", Toast.LENGTH_LONG).show();
+
+        return sum;
+    }
+
+    private void saveMyPlanInServer() {
+        StringRequest request = new StringRequest(Request.Method.POST, UrlClass.createPlanURL,
+                response -> {
+                    if (response.equalsIgnoreCase("\"The plan is created for student successfully\"")) {
+                        Toast.makeText(ScheduleActivity.this,
+                                "برنامه شما با موفقیت ذخیره شده", Toast.LENGTH_LONG).show();
+                    }
+                },
+                error -> {
+                    error.printStackTrace();
+                }
+        ) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                HashMap<String, String> params = new HashMap<>();
+                params.put("student_number", stno);
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < favouriteClassesList.size(); i++) {
+                    sb.append(favouriteClassesList.get(i).getClassId());
+                    if (i != favouriteClassesList.size() - 1) {
+                        sb.append(",");
+                    }
+                }
+                params.put("classes_id", sb.toString());
+                return params;
+            }
+        };
+        queue.add(request);
     }
 }

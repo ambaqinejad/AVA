@@ -84,33 +84,28 @@ public class LoginActivity extends AppCompatActivity implements ComponentMethod 
 
     private void loginRegisterBtnEventHandler() {
         startActivity(new Intent(LoginActivity.this, SignUpActivity.class));
+        finish();
     }
 
     private void sendDataToServer() {
         StringRequest request = new StringRequest(
                 Request.Method.POST, LOGIN_URL,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        if (response.equals("\"You are loged in successfully\"")) {
-                            Intent intent = new Intent(LoginActivity.this, MainPage.class);
-                            intent.putExtra("stno", loginStno.getText().toString());
-                            startActivity(intent);
-                            finish();
-                        } else {
-                            Toast.makeText(LoginActivity.this,
-                                    "اطلاعات ورودی صحیح نمی باشد.", Toast.LENGTH_LONG).show();
-                            changeVisibility(true);
-                        }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
+                response -> {
+                    if (response.equals("\"You are loged in successfully\"")) {
+                        Intent intent = new Intent(LoginActivity.this, MainPage.class);
+                        intent.putExtra("stno", loginStno.getText().toString());
+                        startActivity(intent);
+                        finish();
+                    } else {
                         Toast.makeText(LoginActivity.this,
-                                "اتصال برقرار نشد.", Toast.LENGTH_LONG).show();
+                                "اطلاعات ورودی صحیح نمی باشد.", Toast.LENGTH_LONG).show();
                         changeVisibility(true);
                     }
+                },
+                error -> {
+                    Toast.makeText(LoginActivity.this,
+                            "اتصال برقرار نشد.", Toast.LENGTH_LONG).show();
+                    changeVisibility(true);
                 }
         ) {
             @Override

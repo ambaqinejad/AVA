@@ -67,16 +67,31 @@ public class MainPage extends AppCompatActivity implements ComponentMethod {
     }
 
     public void menuClick(View view) {
+        Intent intent;
         switch (view.getId()) {
             case R.id.select_course_menu:
-                startActivity(new Intent(MainPage.this, SelectCourseActivity.class));
-                break;
-            case R.id.comment_menu:
-                Intent intent = new Intent(MainPage.this, CommentActivity.class);
+                intent = new Intent(MainPage.this, SelectCourseActivity.class);
                 intent.putExtra("stno", stno);
                 startActivity(intent);
+                break;
+            case R.id.comment_menu:
+                intent = new Intent(MainPage.this, CommentActivity.class);
+                intent.putExtra("stno", stno);
+                startActivity(intent);
+                break;
+            case R.id.my_plans_menu:
+                intent = new Intent(MainPage.this, MyPlansActivity.class);
+                intent.putExtra("stno", stno);
+                startActivity(intent);
+                break;
+            case R.id.update_information_menu:
+                intent = new Intent(MainPage.this, UpdateActivity.class);
+                intent.putExtra("stno", stno);
+                startActivity(intent);
+                break;
             case R.id.exit_menu:
                 finish();
+                break;
         }
     }
 }

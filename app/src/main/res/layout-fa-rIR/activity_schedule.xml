@@ -11,7 +11,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:layout_weight=".8">
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -26,5 +27,27 @@
 
 
     </ScrollView>
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/saveInMyPlansButton"
+        android:padding="5dp"
+        android:text="ذخیره در برنامه های من"
+        android:background="#b82048"
+        android:layout_margin="10dp"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:layout_height="0dp"
+        android:layout_weight=".1"/>
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/goToMyPlansButton"
+        android:padding="5dp"
+        android:text="برنامه های من جهت ارسال"
+        android:background="#b82048"
+        android:layout_margin="10dp"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:layout_height="0dp"
+        android:layout_weight=".1"/>
 
 </LinearLayout>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/saturday_layoutp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+    <RelativeLayout
+        android:id="@+id/saturday_titlep"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/week_days_title_back"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/saturday_title_text_viewp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/saturday_title_text"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/times_of_week_days"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/saturday_7.30_9p"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight=".2"
+            android:text="@string/_7_30_9"
+            android:textColor="@color/white"
+            android:textSize="@dimen/min_text_size_in_schedule"
+            android:textStyle="normal" />
+
+
+        <TextView
+            android:id="@+id/course_name_sat_7.30_9p"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight=".8"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="@dimen/min_text_size_in_schedule"
+            android:textStyle="normal" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/times_of_week_days"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/saturday_9_10.30p"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight=".2"
+            android:text="@string/_9_10_30"
+            android:textColor="@color/white"
+            android:textSize="@dimen/min_text_size_in_schedule"
+            android:textStyle="normal" />
+
+
+        <TextView
+            android:id="@+id/course_name_sat_9_10.30p"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight=".8"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="@dimen/min_text_size_in_schedule"
+            android:textStyle="normal" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/times_of_week_days"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/saturday_10.30_12p"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight=".2"
+            android:text="@string/_10_30_12"
+            android:textColor="@color/white"
+            android:textSize="@dimen/min_text_size_in_schedule"
+            android:textStyle="normal" />
+
+
+        <TextView
+            android:id="@+id/course_name_sat_10.30_12p"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight=".8"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="@dimen/min_text_size_in_schedule"
+            android:textStyle="normal" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/times_of_week_days"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/saturday_13.30_15p"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight=".2"
+            android:text="@string/_13_30_15"
+            android:textColor="@color/white"
+            android:textSize="@dimen/min_text_size_in_schedule"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/course_name_sat_13.30_15p"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight=".8"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="@dimen/min_text_size_in_schedule"
+            android:textStyle="normal" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/times_of_week_days"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/saturday_15.30_17p"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight=".2"
+            android:text="@string/_15_30_17"
+            android:textColor="@color/white"
+            android:textSize="@dimen/min_text_size_in_schedule"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/course_name_sat_15.30_17p"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight=".8"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="@dimen/min_text_size_in_schedule"
+            android:textStyle="normal" />
+    </LinearLayout>
+</LinearLayout>

@@ -29,6 +29,7 @@ public class CourseTeacherChildAdapter extends ExpandableRecyclerViewAdapter<Cou
     public CourseParentViewHolder onCreateGroupViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.course_name_for_comment_recycler_view_as_parent
                                 ,parent, false);
+        //parent.removeView(view);
         return new CourseParentViewHolder(view);
     }
 
